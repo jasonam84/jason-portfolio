@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imageomics Platform Redesign | Jason Amo-Mensah</title>
+  <meta name="description" content="Redesign of a public-facing platform built through Imageomics for the five-institute NSF HDR community.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header class="header">
+  <nav class="nav">
+    <a class="brand" href="work.html">← Work</a>
+    <div class="nav-links">
+      <a href="resume.html">Resume</a>
+    </div>
+  </nav>
+</header>
+
+<main class="main case-layout">
+
+  <!-- SIDE NAV -->
+  <aside class="case-nav">
+    <ul>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#context">Context</a></li>
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#users">Users</a></li>
+      <li><a href="#role">My role</a></li>
+      <li><a href="#constraints">Constraints</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#architecture">Structure</a></li>
+      <li><a href="#implementation">Implementation</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#tradeoffs">Tradeoffs</a></li>
+      <li><a href="#risk">Risk</a></li>
+      <li><a href="#approvals">Approvals</a></li>
+      <li><a href="#next">Next</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+    </ul>
+  </aside>
+
+  <!-- CONTENT -->
+  <article class="case-content">
+
+    <!-- SUMMARY -->
+    <section id="summary" class="reveal">
+      <h1>Imageomics platform redesign</h1>
+      <p class="case-meta">
+        Website & Platform Development · Imageomics Institute · NSF HDR (five institutes, public-facing)
+      </p>
+
+      <blockquote>
+        Public systems don’t usually fail all at once.
+        They slowly become harder to use until people stop trusting them.
+      </blockquote>
+
+      <p>
+        I worked on this platform through Imageomics. While Imageomics owned
+        and maintained the site, it served the full NSF HDR community across
+        five research institutes and was open to the public.
+      </p>
+
+      <p>
+        Researchers, faculty, staff, and external visitors used the site
+        to find shared resources, understand programs, and submit requests.
+        Over time, the structure stopped holding up.
+      </p>
+
+      <p>
+        I rebuilt the platform using HTML, CSS, and JavaScript. The goal
+        wasn’t a visual refresh. It was clarity, accuracy, and something
+        the institute could maintain safely over time.
+      </p>
+    </section>
+
+    <!-- CONTEXT -->
+    <section id="context" class="reveal">
+      <h2>Context</h2>
+      <p>
+        Imageomics hosted and maintained a public-facing platform on behalf
+        of the NSF HDR program.
+      </p>
+
+      <p>
+        The site needed to work for multiple audiences at once: internal
+        teams across five institutes and members of the public looking
+        for clear, reliable information.
+      </p>
+
+      <p>
+        The redesign required migrating all content from the legacy site
+        while ensuring accuracy, accessibility, and formal approval.
+      </p>
+    </section>
+
+    <!-- PROBLEM -->
+    <section id="problem" class="reveal">
+      <h2>Problem</h2>
+      <p>
+        The issue wasn’t missing features. It was accumulated mess.
+      </p>
+
+      <ul>
+        <li>Navigation reflected program history instead of user intent</li>
+        <li>Similar content was split across multiple sections</li>
+        <li>Approval steps weren’t clearly documented</li>
+        <li>Public and internal needs blurred together</li>
+      </ul>
+    </section>
+
+    <!-- USERS -->
+    <section id="users" class="reveal">
+      <h2>Users</h2>
+      <ul>
+        <li><strong>Researchers</strong> across five institutes using shared resources</li>
+        <li><strong>Faculty</strong> tracking approvals and timelines</li>
+        <li><strong>Administrative staff</strong> coordinating requests and documentation</li>
+        <li><strong>Public visitors</strong> learning about the program and its work</li>
+      </ul>
+    </section>
+
+    <!-- ROLE -->
+    <section id="role" class="reveal">
+      <h2>My role</h2>
+      <p>
+        I worked with a student designer. I handled the frontend,
+        content migration, and how the system actually behaved.
+      </p>
+
+      <ul>
+        <li>Turned designs into a working, maintainable site</li>
+        <li>Migrated all content from the legacy platform</li>
+        <li>Worked through approvals before publishing anything publicly</li>
+        <li>Reorganized content around real workflows and audiences</li>
+        <li>Shipped changes and adjusted based on feedback</li>
+      </ul>
+
+      <p>
+        Migration often meant reconciling outdated or conflicting content
+        with stakeholders instead of copying pages over blindly.
+      </p>
+    </section>
+
+    <!-- CONSTRAINTS -->
+    <section id="constraints" class="reveal">
+      <h2>Constraints</h2>
+      <ul>
+        <li>One platform serving public and internal audiences</li>
+        <li>Accuracy and approval mattered more than speed</li>
+        <li>Limited engineering support</li>
+        <li>The site needed to survive long-term handoff</li>
+      </ul>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="approach" class="reveal">
+      <h2>Approach</h2>
+      <ul>
+        <li>Listed common tasks by audience</li>
+        <li>Separated public information from internal workflows</li>
+        <li>Grouped content around intent, not initiatives</li>
+        <li>Shipped in small steps to avoid disruption</li>
+      </ul>
+    </section>
+
+    <!-- STRUCTURE -->
+    <section id="architecture" class="reveal">
+      <h2>Structure before and after</h2>
+
+      <p>
+        The original navigation grew around individual programs and
+        initiatives. As more work was added, top-level options multiplied
+        and similar content ended up split across sections.
+      </p>
+
+      <p>
+        I restructured the navigation around what people actually came to
+        do. Related work was grouped under shared categories, and
+        program-specific content moved one level down. This reduced
+        top-level choices and made the site easier to scan without losing depth.
+      </p>
+
+      <div class="arch-toggle">
+        <button data-view="before" class="active">Before</button>
+        <button data-view="after">After</button>
+      </div>
+
+      <div id="arch-diagram"></div>
+    </section>
+
+    <!-- IMPLEMENTATION -->
+    <section id="implementation" class="reveal">
+      <h2>Implementation</h2>
+      <ul>
+        <li>Vanilla HTML, CSS, and JavaScript</li>
+        <li>No frameworks</li>
+        <li>JavaScript only where it helped</li>
+        <li>Simple structure, easy to maintain</li>
+      </ul>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="impact" class="reveal">
+      <h2>Impact</h2>
+      <ul>
+        <li>Less time spent searching for information</li>
+        <li>Approvals moved faster</li>
+        <li>Fewer clarification emails</li>
+        <li>The site became the default public reference</li>
+      </ul>
+    </section>
+
+    <!-- TRADEOFFS -->
+    <section id="tradeoffs" class="reveal">
+      <h2>Tradeoffs</h2>
+      <ul>
+        <li>Chose clarity over deep customization</li>
+        <li>Kept manual review to protect public accuracy</li>
+        <li>Delayed advanced features</li>
+      </ul>
+    </section>
+
+    <!-- RISK -->
+    <section id="risk" class="reveal">
+      <h2>What could’ve gone wrong</h2>
+      <ul>
+        <li>Publishing inaccurate public information</li>
+        <li>Breaking links relied on by external users</li>
+        <li>Blurring lines between public and internal content</li>
+      </ul>
+    </section>
+
+    <!-- APPROVALS -->
+    <section id="approvals" class="reveal">
+      <h2>Approval flow</h2>
+      <ul>
+        <li>Identify content to move or update</li>
+        <li>Check accuracy with staff</li>
+        <li>Get faculty or program lead sign-off</li>
+        <li>Publish publicly</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section id="next" class="reveal">
+      <h2>What I’d do next</h2>
+      <p>I’d focus on search and onboarding, then let usage data guide any bigger changes.</p>
+    </section>
+
+    <!-- REFLECTION -->
+    <section id="reflection" class="reveal">
+      <h2>Reflection</h2>
+      <ul>
+        <li>Public-facing systems raise the stakes</li>
+        <li>Migration is where trust is earned</li>
+        <li>Structure matters more than features</li>
+      </ul>
+    </section>
+
+  </article>
+
+</main>
+
+<footer class="footer">
+  <p class="footer-note">Built slowly. Improved continuously.</p>
+  <p>
+    Reach me at
+    <a href="mailto:jasonam84@gmail.com">jasonam84@gmail.com</a>
+    ·
+    <a href="https://www.linkedin.com/in/jasonamomensah" target="_blank" rel="noopener">
+      LinkedIn
+    </a>
+  </p>
+  <p>© <span id="year"></span> Jason Amo-Mensah</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
