@@ -36,6 +36,7 @@
       <li><a href="#design">Design</a></li>
       <li><a href="#architecture">Structure</a></li>
       <li><a href="#implementation">Implementation</a></li>
+      <li><a href="#evidence">Evidence</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#tradeoffs">Tradeoffs</a></li>
       <li><a href="#risk">Risk</a></li>
@@ -74,9 +75,9 @@
 
       <p>
         I migrated the platform from Google Sites to GitHub and rebuilt it
-        using HTML, CSS, and JavaScript. The goal wasn’t a visual refresh.
-        It was clarity, accuracy, and a system the institute could
-        maintain safely over time.
+        using HTML, CSS, and JavaScript. The project was not just about
+        making the site look better. It was about making it easier to use,
+        easier to update, and less confusing for the people relying on it.
       </p>
       <p>
         The production code now spans 30+ HTML pages with shared frontend
@@ -107,7 +108,7 @@
 
       <p>
         The redesign required migrating all content from the legacy site
-        while ensuring accuracy, accessibility, and formal approval.
+        while keeping accuracy, accessibility, and formal approval intact.
       </p>
     </section>
 
@@ -142,7 +143,7 @@
     <section id="role" class="reveal">
       <h2>My role</h2>
       <p>
-        <strong>Scope & ownership:</strong> I owned frontend implementation,
+        <strong>Scope &amp; ownership:</strong> I worked on frontend implementation,
         the Google Sites-to-GitHub migration, information structure, and
         publishing approvals.
         I collaborated with a student designer on visual direction.
@@ -158,7 +159,7 @@
 
       <p>
         Migration often meant reconciling outdated or conflicting content
-        with stakeholders instead of copying pages over as-is.
+        with stakeholders instead of just copying pages over.
       </p>
     </section>
 
@@ -189,9 +190,9 @@
     <section id="design" class="reveal">
       <h2>Design decisions</h2>
       <p>
-        This redesign was not just visual cleanup. We redesigned how people
-        move through the site, how content is grouped, and how quickly users
-        can find the right page without guessing.
+        This was not just visual cleanup. We also reworked how people moved
+        through the site, how content was grouped, and how quickly users
+        could find what they needed.
       </p>
       <ul>
         <li>Designed a clearer top-level information hierarchy around user intent</li>
@@ -202,7 +203,7 @@
         <li>Designed for accessibility basics in production: meaningful alt text, labels, and keyboard-friendly controls</li>
       </ul>
       <p>
-        I handled the frontend implementation of these design choices and
+        I helped implement these design choices on the frontend and
         worked with a student designer on visual direction and layout decisions.
       </p>
     </section>
@@ -218,18 +219,43 @@
       </p>
 
       <p>
-        I restructured the navigation around what people actually came to
+        I reorganized the navigation around what people actually came to
         do. Related work was grouped under shared categories, and
         program-specific content moved one level down. This reduced
         top-level choices and made the site easier to scan without losing depth.
       </p>
 
-      <div class="arch-toggle">
-        <button data-view="before" class="active">Before</button>
-        <button data-view="after">After</button>
+      <div class="imageomics-compare">
+        <figure class="imageomics-compare-card">
+          <span class="imageomics-compare-label">Before</span>
+          <img
+            src="assets/nav-before.png?v=2"
+            alt="Earlier version of the site homepage and navigation."
+            loading="lazy"
+          >
+          <figcaption>
+            The earlier version put less information in the main navigation and made key sections harder to reach directly.
+          </figcaption>
+        </figure>
+
+        <figure class="imageomics-compare-card">
+          <span class="imageomics-compare-label">After</span>
+          <img
+            src="assets/nav-after.png?v=2"
+            alt="Updated version of the site homepage and navigation."
+            loading="lazy"
+          >
+          <figcaption>
+            The updated version surfaced major sections more clearly and made the site easier to scan at a glance.
+          </figcaption>
+        </figure>
       </div>
 
-      <div id="arch-diagram"></div>
+      <div class="callout">
+        <strong>What changed:</strong> the earlier navigation hid too much under broader categories,
+        while the updated structure made key sections like institutes, resources, news, publications,
+        challenges, and events easier to reach directly from the main navigation.
+      </div>
     </section>
 
     <!-- IMPLEMENTATION -->
@@ -244,6 +270,45 @@
         <li>Challenge status logic with deadline-based badges, countdowns, and filters</li>
         <li>Legacy redirect pages to preserve high-traffic links after migration</li>
       </ul>
+    </section>
+
+    <section id="evidence" class="reveal">
+      <h2>Evidence in the work</h2>
+      <p>
+        A lot of this project was infrastructure work, so the strongest proof
+        is not one flashy screen. It is the amount of messy work the new
+        system could handle without becoming harder to maintain.
+      </p>
+
+      <p>
+        One example of this was the site search. Instead of making users click
+        through page after page, I added client-side search so people could
+        find resource-related content across different parts of the site more quickly.
+      </p>
+
+      <figure class="evidence-figure evidence-figure-wide">
+        <img
+          src="assets/search-index.png"
+          alt="Search results page showing indexed results for a resources query across multiple site pages."
+          loading="lazy"
+        >
+        <figcaption>
+          Search results showing indexed matches across multiple pages for a resource-related query.
+        </figcaption>
+      </figure>
+
+      <p>
+        I also rebuilt shared page structure so updates did not have to be
+        repeated manually everywhere, and I cleaned up migrated content instead
+        of moving old pages over as-is.
+      </p>
+
+      <div class="callout">
+        <strong>What this looked like in practice:</strong> map the old site,
+        group pages by real user intent, rebuild shared UI patterns, move
+        content into the new structure, check accuracy with staff, preserve
+        important legacy links, and publish in smaller waves instead of all at once.
+      </div>
     </section>
 
     <!-- IMPACT -->
@@ -262,9 +327,9 @@
     <section id="tradeoffs" class="reveal">
       <h2>Tradeoffs</h2>
       <ul>
-        <li>Prioritized stable vanilla JS patterns over framework adoption</li>
-        <li>Kept manual review gates to protect public accuracy and institutional trust</li>
-        <li>Implemented path-safe component loading to reduce duplication at the cost of added script complexity</li>
+        <li>We focused more on getting the content and structure right than on adding extra features</li>
+        <li>Manual review took more time, but it helped avoid publishing pages with outdated or incorrect information</li>
+        <li>Some parts of the build stayed simple on purpose so the site would be easier to update and hand off later</li>
       </ul>
     </section>
 
@@ -272,9 +337,10 @@
     <section id="risk" class="reveal">
       <h2>What could’ve gone wrong</h2>
       <ul>
-        <li>Publishing inaccurate public information</li>
-        <li>Breaking links relied on by external users and partner institutes</li>
-        <li>Blurring lines between public and internal content</li>
+        <li>Moving over outdated content without catching it first</li>
+        <li>Breaking links or page paths during the migration to GitHub</li>
+        <li>Publishing updates before content had been fully checked</li>
+        <li>Making the structure look cleaner without actually making things easier to find</li>
       </ul>
     </section>
 
@@ -282,17 +348,17 @@
     <section id="approvals" class="reveal">
       <h2>Approval flow</h2>
       <ul>
-        <li>Identify content to move or update</li>
-        <li>Check accuracy with staff</li>
-        <li>Get faculty or program lead sign-off</li>
-        <li>Publish publicly</li>
+        <li>The designer shared the page or update that needed to be built</li>
+        <li>I coded the changes and pushed them to GitHub</li>
+        <li>Content and accuracy were checked before release</li>
+        <li>Once approved, the update was published to the main site</li>
       </ul>
     </section>
 
     <!-- NEXT -->
     <section id="next" class="reveal">
       <h2>What I’d do next</h2>
-      <p>The build is complete, so this is now in maintenance mode. Any future updates should be small, content-driven, and based on real usage patterns.</p>
+      <p>The main build is complete, so the work now is mostly maintenance. Any future changes would likely be smaller content updates, routine upkeep, and improvements based on how people use the site over time.</p>
     </section>
 
     <!-- REFLECTION -->
