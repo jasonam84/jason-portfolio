@@ -89,6 +89,10 @@ a:hover {
   padding: 80px 20px 120px;
 }
 
+.main > section + section {
+  margin-top: 24px;
+}
+
 .intro h1 {
   font-size: 2.2rem;
   line-height: 1.2;
@@ -114,6 +118,10 @@ h2 {
 ul {
   padding-left: 18px;
   color: var(--muted);
+}
+
+li + li {
+  margin-top: 6px;
 }
 
 .footer {
@@ -174,6 +182,18 @@ ul {
 .case-nav a.active {
   color: #2563EB;
   font-weight: 600;
+}
+
+.case h3 a {
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.case h3 a:hover {
+  color: #1D4ED8;
+  text-decoration-color: currentColor;
 }
 
 .case-content h1 {

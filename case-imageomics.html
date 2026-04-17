@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imageomics Platform Redesign | Jason Amo-Mensah</title>
-  <meta name="description" content="Redesign of a public-facing platform built through Imageomics for the five-institute NSF HDR community.">
+  <title>NSF HDR Platform Redesign | Jason Amo-Mensah</title>
+  <meta name="description" content="NSF HDR Platform Redesign built through Imageomics for a five-institute, public-facing research community.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -33,6 +33,7 @@
       <li><a href="#role">My role</a></li>
       <li><a href="#constraints">Constraints</a></li>
       <li><a href="#approach">Approach</a></li>
+      <li><a href="#design">Design</a></li>
       <li><a href="#architecture">Structure</a></li>
       <li><a href="#implementation">Implementation</a></li>
       <li><a href="#impact">Impact</a></li>
@@ -49,9 +50,9 @@
 
     <!-- SUMMARY -->
     <section id="summary" class="reveal">
-      <h1>Imageomics platform redesign</h1>
+      <h1>NSF HDR Platform Redesign</h1>
       <p class="case-meta">
-        Website & Platform Development · Imageomics Institute · NSF HDR (five institutes, public-facing)
+        Built through Imageomics · Serves five institutes · Public-facing
       </p>
 
       <blockquote>
@@ -60,9 +61,9 @@
       </blockquote>
 
       <p>
-        I worked on this platform through Imageomics. While Imageomics owned
-        and maintained the site, it served the full NSF HDR community across
-        five research institutes and was open to the public.
+        I worked on this platform through Imageomics. Imageomics owned and
+        maintained the site, and it served the full NSF HDR community across
+        five research institutes while remaining open to the public.
       </p>
 
       <p>
@@ -72,9 +73,15 @@
       </p>
 
       <p>
-        I rebuilt the platform using HTML, CSS, and JavaScript. The goal
-        wasn’t a visual refresh. It was clarity, accuracy, and something
-        the institute could maintain safely over time.
+        I migrated the platform from Google Sites to GitHub and rebuilt it
+        using HTML, CSS, and JavaScript. The goal wasn’t a visual refresh.
+        It was clarity, accuracy, and a system the institute could
+        maintain safely over time.
+      </p>
+      <p>
+        The production code now spans 30+ HTML pages with shared frontend
+        architecture for institutes, resources, events, publications, and
+        ML challenge workflows.
       </p>
     </section>
 
@@ -93,6 +100,12 @@
       </p>
 
       <p>
+        During 2025-2026, NSF-related funding uncertainty and program
+        disruptions increased the need for a stable public platform to
+        preserve resources, institutional history, and cross-institute access.
+      </p>
+
+      <p>
         The redesign required migrating all content from the legacy site
         while ensuring accuracy, accessibility, and formal approval.
       </p>
@@ -102,14 +115,15 @@
     <section id="problem" class="reveal">
       <h2>Problem</h2>
       <p>
-        The issue wasn’t missing features. It was accumulated mess.
+        The core challenge wasn’t adding features. It was helping a growing
+        platform stay clear and usable as needs expanded over time.
       </p>
 
       <ul>
-        <li>Navigation reflected program history instead of user intent</li>
-        <li>Similar content was split across multiple sections</li>
-        <li>Approval steps weren’t clearly documented</li>
-        <li>Public and internal needs blurred together</li>
+        <li>Navigation had grown around program history more than user tasks</li>
+        <li>Related content ended up spread across multiple sections</li>
+        <li>Approval steps were not always easy to follow</li>
+        <li>Public and internal information needed clearer separation</li>
       </ul>
     </section>
 
@@ -128,21 +142,23 @@
     <section id="role" class="reveal">
       <h2>My role</h2>
       <p>
-        I worked with a student designer. I handled the frontend,
-        content migration, and how the system actually behaved.
+        <strong>Scope & ownership:</strong> I owned frontend implementation,
+        the Google Sites-to-GitHub migration, information structure, and
+        publishing approvals.
+        I collaborated with a student designer on visual direction.
       </p>
 
       <ul>
-        <li>Turned designs into a working, maintainable site</li>
-        <li>Migrated all content from the legacy platform</li>
-        <li>Worked through approvals before publishing anything publicly</li>
-        <li>Reorganized content around real workflows and audiences</li>
-        <li>Shipped changes and adjusted based on feedback</li>
+        <li>Built and maintained shared header/footer components with dynamic path handling</li>
+        <li>Migrated and QAed legacy Google Sites content into GitHub-hosted pages</li>
+        <li>Implemented client-side search indexing across site pages and dynamic content</li>
+        <li>Built filter and pagination logic for events, news, and challenge views</li>
+        <li>Added redirect pages to preserve legacy URLs and reduce broken links after launch</li>
       </ul>
 
       <p>
         Migration often meant reconciling outdated or conflicting content
-        with stakeholders instead of copying pages over blindly.
+        with stakeholders instead of copying pages over as-is.
       </p>
     </section>
 
@@ -152,6 +168,7 @@
       <ul>
         <li>One platform serving public and internal audiences</li>
         <li>Accuracy and approval mattered more than speed</li>
+        <li>Needed long-term continuity as funding and ownership changed</li>
         <li>Limited engineering support</li>
         <li>The site needed to survive long-term handoff</li>
       </ul>
@@ -166,6 +183,28 @@
         <li>Grouped content around intent, not initiatives</li>
         <li>Shipped in small steps to avoid disruption</li>
       </ul>
+    </section>
+
+    <!-- DESIGN -->
+    <section id="design" class="reveal">
+      <h2>Design decisions</h2>
+      <p>
+        This redesign was not just visual cleanup. We redesigned how people
+        move through the site, how content is grouped, and how quickly users
+        can find the right page without guessing.
+      </p>
+      <ul>
+        <li>Designed a clearer top-level information hierarchy around user intent</li>
+        <li>Standardized card, section, and CTA patterns so pages felt consistent</li>
+        <li>Created a reusable visual language across institutes, events, and resources</li>
+        <li>Improved readability with cleaner spacing, clearer headings, and better content chunking</li>
+        <li>Made navigation behavior predictable across desktop and mobile states</li>
+        <li>Designed for accessibility basics in production: meaningful alt text, labels, and keyboard-friendly controls</li>
+      </ul>
+      <p>
+        I handled the frontend implementation of these design choices and
+        worked with a student designer on visual direction and layout decisions.
+      </p>
     </section>
 
     <!-- STRUCTURE -->
@@ -197,10 +236,13 @@
     <section id="implementation" class="reveal">
       <h2>Implementation</h2>
       <ul>
-        <li>Vanilla HTML, CSS, and JavaScript</li>
-        <li>No frameworks</li>
-        <li>JavaScript only where it helped</li>
-        <li>Simple structure, easy to maintain</li>
+        <li>Vanilla HTML, CSS, and JavaScript across 30+ pages</li>
+        <li>Component loading system for consistent header/footer across directory depths</li>
+        <li>Client-side search indexing with page crawling and query normalization</li>
+        <li>Data-driven events/news rendering with responsive mobile/desktop pagination</li>
+        <li>Separate carousel logic for home and conference pages, including controls and autoplay</li>
+        <li>Challenge status logic with deadline-based badges, countdowns, and filters</li>
+        <li>Legacy redirect pages to preserve high-traffic links after migration</li>
       </ul>
     </section>
 
@@ -208,10 +250,11 @@
     <section id="impact" class="reveal">
       <h2>Impact</h2>
       <ul>
-        <li>Less time spent searching for information</li>
-        <li>Approvals moved faster</li>
-        <li>Fewer clarification emails</li>
-        <li>The site became the default public reference</li>
+        <li>Unified five-institute content into a single public reference point</li>
+        <li>Preserved access to key resources during a funding transition period</li>
+        <li>Made updates easier by centralizing shared navigation and footer components</li>
+        <li>Reduced migration risk by keeping legacy links alive through explicit redirects</li>
+        <li>Improved discoverability with searchable pages and filterable event/news views</li>
       </ul>
     </section>
 
@@ -219,9 +262,9 @@
     <section id="tradeoffs" class="reveal">
       <h2>Tradeoffs</h2>
       <ul>
-        <li>Chose clarity over deep customization</li>
-        <li>Kept manual review to protect public accuracy</li>
-        <li>Delayed advanced features</li>
+        <li>Prioritized stable vanilla JS patterns over framework adoption</li>
+        <li>Kept manual review gates to protect public accuracy and institutional trust</li>
+        <li>Implemented path-safe component loading to reduce duplication at the cost of added script complexity</li>
       </ul>
     </section>
 
@@ -230,7 +273,7 @@
       <h2>What could’ve gone wrong</h2>
       <ul>
         <li>Publishing inaccurate public information</li>
-        <li>Breaking links relied on by external users</li>
+        <li>Breaking links relied on by external users and partner institutes</li>
         <li>Blurring lines between public and internal content</li>
       </ul>
     </section>
@@ -249,7 +292,7 @@
     <!-- NEXT -->
     <section id="next" class="reveal">
       <h2>What I’d do next</h2>
-      <p>I’d focus on search and onboarding, then let usage data guide any bigger changes.</p>
+      <p>The build is complete, so this is now in maintenance mode. Any future updates should be small, content-driven, and based on real usage patterns.</p>
     </section>
 
     <!-- REFLECTION -->
