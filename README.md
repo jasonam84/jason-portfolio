@@ -15,7 +15,8 @@ Open <http://127.0.0.1:8765>. Every page also works as static files. Email opens
 ## Content and shared components
 
 - `scripts/build.py` contains the shared page shell, navigation, footer, and page composition.
-- `templates/projects.json` holds the four case studies, roles, dates, responsibilities, methods, and outcomes.
+- `templates/projects.json` holds project summaries, roles, dates, responsibilities, methods, and outcomes.
+- `templates/case-imageomics.html` contains the detailed HDR/Imageomics case, with source links checked against both repositories. [Evidence notes](docs/IMAGEOMICS-EVIDENCE.md) record attribution and branch status.
 - `assets/css/style.css` defines readable typography, consistent spacing, responsive layouts, focus states, reduced motion, and print styles.
 - `assets/js/main.js` progressively enhances mobile navigation and case-study section highlighting.
 - The nine committed HTML files are the deployable output. They include complete content and navigation without JavaScript.

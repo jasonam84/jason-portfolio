@@ -61,14 +61,14 @@
   },
   {
     "slug": "case-imageomics.html",
-    "name": "NSF HDR Research Platform Redesign",
+    "name": "NSF HDR Platform Development & Redesign",
     "short": "Making research easier to find.",
     "org": "Ohio State · Imageomics Institute",
     "category": "Platform development",
     "date": "June 2025 – Present",
     "role": "Website & Platform Development Intern",
     "theme": "research",
-    "desc": "A Google Sites-to-GitHub migration and frontend rebuild for a public research community spanning five institutes.",
+    "desc": "Frontend development, migration, and ongoing maintenance for the NSF HDR research community, with related work on the Imageomics Institute website.",
     "metrics": [
       [
         "30+",
@@ -85,10 +85,10 @@
     ],
     "problem": "Researchers, faculty, staff, and public visitors needed to find resources across a growing platform. Content was spread across sections, navigation had become difficult to scan, and the migration had to preserve accuracy and important links.",
     "responsibilities": [
-      "Implemented the frontend in HTML, CSS, and JavaScript, working from the designer’s UX direction.",
-      "Migrated and reviewed content across a 30+ page NSF HDR platform.",
-      "Built shared page structure, responsive navigation, and client-side search.",
-      "Collaborated with designers and research stakeholders on content accuracy and publishing reviews."
+      "Implemented frontend pages and interactive features for the 30+ page NSF HDR platform using HTML, CSS, JavaScript, and GitHub.",
+      "Developed and refined search, event filtering, pagination, and dynamic content; corrected responsive layouts and navigation links.",
+      "Worked from designer direction and incorporated stakeholder content feedback through GitHub pull requests and reviews.",
+      "Continue to maintain the HDR platform and develop the separate Imageomics website, including post-release and mobile fixes."
     ],
     "steps": [
       [
@@ -116,9 +116,10 @@
       "Content migration",
       "Responsive design"
     ],
-    "results": "The rebuilt platform brought content for five institutes into one public reference point. Shared navigation and footer components made updates more consistent, while searchable content and preserved legacy links supported discovery and continuity. No measured usability improvement is claimed.",
+    "results": "The shared platform supports content discovery through site search, event filters, responsive pagination, and dynamic event selection. Repository history documents the redesign and continued fixes; no measured usability or traffic gain is claimed.",
     "lesson": "A migration is as much a content and coordination problem as a coding problem. Clear structure, review steps, and reusable components make a platform easier for the next person to maintain.",
-    "note": "The NSF HDR platform and the ongoing Imageomics Institute website redesign are separate efforts. This case focuses on the NSF HDR platform."
+    "note": "The NSF HDR Ecosystem platform and Imageomics Institute website are separate codebases. This case focuses on the HDR platform, then explains the related Imageomics work and its development-branch status.",
+    "experience_summary": "Develop and maintain research websites through frontend implementation, feature work, debugging, and stakeholder review. My work spans the NSF HDR platform and the separate Imageomics Institute website."
   },
   {
     "slug": "case-asphalt-qcqa.html",
