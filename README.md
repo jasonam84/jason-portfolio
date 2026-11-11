@@ -1,6 +1,6 @@
 # Jason Amo-Mensah — Portfolio
 
-A responsive, buildless portfolio for product analytics, digital strategy, information systems, and frontend work. The production site is plain HTML, CSS, JavaScript, and a downloadable resume PDF. There are no runtime packages, external fonts, trackers, or API keys.
+A readable, understated portfolio for product analytics, digital strategy, information systems, and frontend work. A clean system font, 17px body text, restrained headings, neutral colors, and simple dividers keep the focus on the content. The production site is plain HTML, CSS, JavaScript, and a downloadable resume PDF. There are no runtime packages, external fonts, trackers, or API keys.
 
 ## Preview
 
@@ -16,7 +16,7 @@ Open <http://127.0.0.1:8765>. Every page also works as static files. Email opens
 
 - `scripts/build.py` contains the shared page shell, navigation, footer, and page composition.
 - `templates/projects.json` holds the four case studies, roles, dates, responsibilities, methods, and outcomes.
-- `assets/css/style.css` defines layout, responsive behavior, focus states, reduced motion, and print styles.
+- `assets/css/style.css` defines readable typography, consistent spacing, responsive layouts, focus states, reduced motion, and print styles.
 - `assets/js/main.js` progressively enhances mobile navigation and case-study section highlighting.
 - The nine committed HTML files are the deployable output. They include complete content and navigation without JavaScript.
 

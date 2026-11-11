@@ -1,57 +1,49 @@
-# Redesign implementation report
+# Portfolio design and validation notes
 
-## Source inspection and delivery
+## Current visual direction
 
-Inspected the workspace’s seven original HTML pages, CSS, JavaScript, SVG favicon, editor configuration, and resume PDF. The workspace was an exported folder without `.git`. A separate checkout of `jasonam84/jason-portfolio` was created, based on `main` at `94a4732`, with branch `redesign/product-portfolio`. The local folder included newer wording on the homepage, About page, and Imageomics case than the remote main branch; that content and the supplied brief informed the redesign. The supplied brief controls current dates, role names, and factual corrections.
+The latest revision prioritizes readability and a traditional professional portfolio layout. Every page uses a clean system font stack, 17px body copy at approximately 1.65 line height, restrained heading sizes, and consistent margins. Article text stays within 720px; the overall site width is capped at 1040px.
 
-## Retained
+Palette:
 
-- Static HTML/CSS/JavaScript architecture and GitHub Pages compatibility.
-- All seven existing HTML URLs and `resume.pdf`.
-- Existing favicon, contact email, and LinkedIn profile.
-- Research platform detail supported by the original case: Google Sites-to-GitHub migration, 30+ pages, five institutes, designer collaboration, shared components, search, pagination, and legacy paths.
-- Case-study in-page navigation, now consistently implemented across all four cases.
+- Background: `#FAFAF8`
+- Primary text: `#242424`
+- Secondary text: `#626262`
+- Borders: `#E5E5E1`
+- Accent and links: `#365B78`
 
-## Replaced and added
+The oversized serif name, artistic type treatment, tiny labels, display numerals, tinted feature panel, and asymmetric editorial offsets were replaced. There are no gradients, shadows, decorative illustrations, pill tags, moving hover effects, or UI component libraries. Links use underlines, and dividers separate related content without enclosing everything in cards.
 
-- Replaced the narrow text-heavy layout with a warm off-white, navy, and blue design system, responsive grids, project illustrations, impact metrics, and restrained hover transitions.
-- Added a new PNC case, Contact page, clear five-item site navigation, accessible mobile menu, skip link, reduced-motion rules, and print styles.
-- Rewrote the homepage, Work, About, Resume, and all project cases with the supplied positioning and confirmed facts.
-- Added seven substantive sections to each case: overview, opportunity, responsibilities, approach, tools, results, and lessons.
-- Made PNC the first project and experience, with 400+ session replays, 40+ funnels, and 3,000+ comments. These are activity/scope figures, not conversion results.
-- Used an approximately 25% reporting-time reduction for ODOT, with no additional efficiency or accuracy claim.
-- Added a downloadable one-page resume, PDF preview with fallback links, and full HTML text version.
-- Added reusable Python page generation and centralized case-study data. Generated HTML is committed; no build process is required for hosting.
-- Added local-link/content validation and optional browser QA scripts.
+## Pages
 
-## Removed or superseded
+- **Home:** A modest name heading and personal introduction, followed by PNC and Imageomics features with factual scope, two additional projects, experience, skills, and contact information.
+- **Work:** A readable index of all four projects, with PNC and Imageomics featured first.
+- **About:** Personal background and approach, with education details beside the narrative on desktop and after it on mobile.
+- **Case studies:** Clear headings, role/date metadata, factual scope, article contents, readable prose, documented contributions, tools, results, and reflections. No fabricated project artifacts or process diagrams.
+- **Resume:** Readable HTML resume, prominent PDF download, and embedded PDF with fallback links.
+- **Contact:** Direct email and profile links in a simple directory.
 
-- Outdated “junior” descriptions and incoming PNC status.
-- Old unsupported resume outcomes, including navigation-time, approval, audit-readiness, and social-engagement percentages not confirmed by the current brief.
-- Old visibility-dependent reveal effects that hid content when JavaScript failed.
-- Unused progress, diagram-toggle, and roadmap-toggle code. The old source did not contain the matching controls; shared case navigation and native disclosure elements cover the useful behavior.
-- Excessive case-study headings and repeated explanatory copy. Useful research implementation detail remains in a dedicated section.
+On narrow screens, projects, experience, capabilities, scope summaries, and resume sections flow vertically. Mobile navigation retains a keyboard-accessible menu with Escape-to-close and focus return. Navigation also works without JavaScript.
 
-No company excluded by the brief appears in the website or new PDF. No internal PNC screens, findings, customer records, or fabricated research artifacts are included. All project artwork is conceptual HTML/CSS illustration, rather than claimed screenshots. The research platform case is distinguished from the separate ongoing Imageomics Institute redesign.
+## Accurate information and functionality
 
-## Resume decisions
+The supplied brief and existing repository remain the factual sources. PNC dates and scope, Imageomics platform details, ODOT’s approximately 25% reporting-time reduction, education, GPA, and supported skills are preserved. PNC activity figures are distinguished from conversion outcomes. Internal customer data and proprietary screenshots are omitted. The NSF HDR platform is distinguished from the separate ongoing Imageomics Institute redesign.
 
-The original PDF was inspected by extracting its text. It listed a 3.6 GPA and an incoming PNC role in May 2026. The new PDF and HTML resume use the brief’s 3.5 GPA, completed PNC role in June–August 2026, degree specialization, and expected May 2027 graduation. Older activities were omitted to keep the new resume focused and avoid implying unverified current participation. SQL and Tableau are supported by the original PDF; Glassbox and Qualtrics Text iQ are supported by the brief. No proficiency levels are asserted.
+The previously updated one-page resume PDF is preserved. Existing page URLs, contact destinations, anchored contents, section highlighting, PDF download, readable resume fallback, skip link, reduced motion, and print styling are retained. The site remains static HTML/CSS/JavaScript, compatible with GitHub Pages without a hosting build step.
 
-## Verification completed
+## Verification of this revision
 
-- All nine HTML pages pass `html-validate` 9.7.1 default recommended rules, with zero errors or warnings.
-- Shared JavaScript passes `node --check`.
-- CSS parses with `tinycss2` without syntax errors and renders in Chrome.
-- All relative document, asset, PDF, and fragment references pass the dependency-free site checker.
-- Browser checks pass on all nine pages at 1440, 768, 390, and 320 pixels, with visible content and no horizontal document overflow.
-- Axe WCAG 2 A/AA and 2.1 AA scans pass on every page at 1440 and 390 pixels, with zero reported violations. Two initially low-contrast illustration labels were darkened before the final passing run.
-- Mobile menu opens and closes; Escape returns focus to the trigger; Work navigation succeeds.
-- Skip link moves focus to main content; reduced motion disables smooth scrolling; navigation remains available with JavaScript disabled.
-- Case anchors resolve, and the resume download uses `Jason-Amo-Mensah-Resume.pdf`.
-- The replacement PDF extracts as one page, with confirmed dates, role information, GPA, and skills.
-- Desktop and mobile homepage screenshots were visually inspected.
+- All nine HTML pages pass `html-validate` recommended rules.
+- JavaScript syntax passes `node --check`.
+- CSS parses without syntax errors with `tinycss2`.
+- Local pages, assets, PDF links, fragments, IDs, landmarks, language, metadata, and content guardrails pass `scripts/check_site.py`.
+- Text contrast against the background is 14.85:1 for primary text, 5.84:1 for secondary text, and 6.87:1 for the accent. Each exceeds WCAG AA’s 4.5:1 requirement for normal text.
+- Responsive rules were reviewed for desktop, tablet, and mobile widths, including stacking, navigation, reading widths, and text sizes.
 
-## Limits
+Earlier revisions were tested in Chrome at 1440, 768, 390, and 320px with axe and interaction checks. Those results do not verify this latest layout. The most recent requested browser run was declined; browser rendering and automated accessibility scans were not rerun for this revision. Physical devices, Safari, Firefox, and screen readers have not been tested.
 
-Browser QA used desktop Chrome with simulated viewport widths. Safari, Firefox, physical devices, and screen readers were not tested. Axe checks do not constitute a complete accessibility audit. External mail/profile links were preserved from the source; remote destinations were not exhaustively checked. No main-branch merge or Pages deployment is performed as part of this review delivery.
+## Source and deployment
+
+Shared page composition is in `scripts/build.py`; case data is in `templates/projects.json`. All nine generated HTML files are committed for direct hosting. The local workspace contains the current output, and a separate Git checkout at `/tmp/jason-portfolio-review` holds the review branch `redesign/product-portfolio`.
+
+No main-branch merge or Pages deployment is part of this change. The connected GitHub integration previously returned a 403 when creating a pull request. See README.md for local preview, content regeneration, and GitHub Pages deployment instructions.
