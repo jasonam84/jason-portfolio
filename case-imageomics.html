@@ -57,7 +57,6 @@
 <h2>A shared website for the NSF HDR community</h2>
 <p>The NSF Harnessing the Data Revolution (HDR) Ecosystem brings together five research institutes: A3D3, Imageomics, ID4, iHARP, and I-GUIDE. Its public website connects researchers, students, staff, and prospective participants with institute information, shared resources, publications, events, and machine learning challenges.</p>
 <p>I worked on the platform through Ohio State’s Imageomics Institute. My role covered frontend development, content migration, feature implementation, and the fixes that follow a release. The work continued after the redesign: event dates change, challenge results need publishing, and links or mobile layouts need attention.</p>
-<p><a href="https://github.com/HDR-Ecosystem/hdr-website">View the HDR platform repository</a> · <a href="https://github.com/Imageomics/imageomics.github.io">View the separate Imageomics website repository</a></p>
 </section>
 <section id="problem">
 <h2>Why the site needed more than a visual update</h2>
@@ -67,9 +66,9 @@
 </section>
 <section id="role">
 <h2>My contribution and the team’s contribution</h2>
-<p>I implemented frontend pages, responsive styles, and interactive features, and submitted changes through GitHub. My commits include the initial page build, event search and filtering, news rendering, search improvements, and post-launch fixes. The <a href="https://github.com/HDR-Ecosystem/hdr-website/pull/4">redesign pull request</a> brought that work into the main branch.</p>
-<p>The designer provided UX and visual direction. Research stakeholders supplied and reviewed content, while other contributors also changed the code and reviewed pull requests. For example, the <a href="https://github.com/HDR-Ecosystem/hdr-website/pull/102">mobile update PR</a> received approval from another maintainer before it was merged.</p>
-<p>I worked with shared components, but did not originate every part of that architecture. The initial modular header/footer loader came through a <a href="https://github.com/HDR-Ecosystem/hdr-website/pull/63">separate contribution</a>. My later work included integrating behavior with asynchronously loaded navigation and correcting search initialization. That distinction matters: this was sustained work in a shared codebase.</p>
+<p>I implemented frontend pages, responsive styles, and interactive features, and submitted changes through GitHub. My commits include the initial page build, event search and filtering, news rendering, search improvements, and post-launch fixes. The redesign was integrated through the team’s review process.</p>
+<p>The designer provided UX and visual direction. Research stakeholders supplied and reviewed content, while other contributors also changed the code and reviewed pull requests. Mobile updates, for example, went through review by another maintainer before being integrated.</p>
+<p>I worked with shared components, but did not originate every part of that architecture. The initial modular header/footer loader came through a separate contribution. My later work included integrating behavior with asynchronously loaded navigation and correcting search initialization. That distinction matters: this was sustained work in a shared codebase.</p>
 </section>
 <section id="approach">
 <h2>What I implemented</h2>
@@ -80,17 +79,17 @@
 <div class="approach-entry">
 <h3>Search that includes more than page titles</h3>
 <p>I improved the client-side search to resolve page URLs from the site root, index page text, and return results through the search interface. The current implementation discovers linked HTML pages, normalizes case, accents, and punctuation, and includes JavaScript-rendered event records. Those event records need explicit indexing because their content is not in the original HTML.</p>
-<p>The <a href="https://github.com/HDR-Ecosystem/hdr-website/commit/db173e871eaae189a38537bb36d7190358a09961">December search changes</a> show URL resolution and result handling, and a <a href="https://github.com/HDR-Ecosystem/hdr-website/commit/e1c519d8d33bc9204d93498e826136457d25f37b">later search update</a> adds link discovery, normalization, and dynamic event indexing; <a href="https://github.com/HDR-Ecosystem/hdr-website/commit/f3e744d241800b25481bae4d15b8a553a064c101">later fixes</a> connect search initialization to the loaded header.</p>
+<p>I also corrected search initialization so it could attach to the navigation after the shared header loaded.</p>
 </div>
 <div class="approach-entry">
 <h3>Event filtering and pagination</h3>
 <p>I implemented event search alongside filters for event type and institute, then refined the listing to account for format and dates. Filtering changes the result set before pagination, and resets the current page so visitors do not land on an empty later page after narrowing their search.</p>
-<p>I later adjusted events and news for mobile: six items per page instead of the desktop default of fifteen, with fewer visible page buttons. These behaviors are visible in my <a href="https://github.com/HDR-Ecosystem/hdr-website/commit/30b38adb024491a6d0a4d72d183171efbc226e15">initial events implementation</a> and <a href="https://github.com/HDR-Ecosystem/hdr-website/commit/dcc4292976e366ab9a8d7636359a3c84656472a7">mobile pagination update</a>.</p>
+<p>I later adjusted events and news for mobile: six items per page instead of the desktop default of fifteen, with fewer visible page buttons. I refined this behavior after the initial implementation so the controls remained useful on smaller screens.</p>
 </div>
 <div class="approach-entry">
 <h3>Dynamic content and challenge pages</h3>
 <p>I worked on data-driven news and events rendering and updated the homepage to select events from the available event data and challenge event content. This reduced the need to edit the homepage separately whenever the relevant events changed.</p>
-<p>I also developed and refined challenge-page presentation, including date-based status behavior, winners content, and the Year 2 leaderboard view. The <a href="https://github.com/HDR-Ecosystem/hdr-website/commit/d8f56dc8b44733846d9519b1b97d6cb3fb3bc193">homepage event changes</a> and <a href="https://github.com/HDR-Ecosystem/hdr-website/pull/100">Year 2 leaderboard PR</a> are examples of work beyond the original page migration. My contribution was the website implementation, not the underlying research or competition results.</p>
+<p>I also developed and refined challenge-page presentation, including date-based status behavior, winners content, and the Year 2 leaderboard view. Homepage event updates and the Year 2 leaderboard are examples of work beyond the original page migration. My contribution was the website implementation, not the underlying research or competition results.</p>
 </div>
 </section>
 <section id="architecture">
@@ -100,7 +99,7 @@
 <h3>Shared components and initialization</h3>
 <p>Central headers and footers make site-wide updates easier, but loading them asynchronously introduces timing and path issues. I contributed integration fixes and styling around that shared implementation. The component-loader history includes work from other contributors as well as mine.</p>
 <h3>Removing a control when it did not help</h3>
-<p>More controls were not always the right answer. A maintainer <a href="https://github.com/HDR-Ecosystem/hdr-website/commit/83f7faf8298542a1572b703f096b910137ffb87d">removed the extra challenge search/filter controls</a> because their application was confusing and the main search was more useful. That was the maintainer’s change, not mine. It is a concrete example of the team refining the interface after seeing how the pieces fit together.</p>
+<p>More controls were not always the right answer. A maintainer removed the extra challenge search/filter controls because their application was confusing and the main search was more useful. That was the maintainer’s change, not mine. It is a concrete example of the team refining the interface after seeing how the pieces fit together.</p>
 </section>
 <section id="tools" class="methods">
 <h2>Tools &amp; methods</h2>
@@ -109,13 +108,13 @@
 <section id="impact">
 <h2>What changed</h2>
 <p>The platform now brings institute information, resources, publications, events, and challenge content into a shared site spanning more than 30 pages. Visitors can search across content and narrow event listings. Mobile pagination presents a shorter list, and homepage events can be selected from existing content instead of maintained as an unrelated block.</p>
-<p>Those are implemented capabilities, not measured usability gains. I do not have validated before-and-after figures for task completion, traffic, search success, or time saved. The strongest evidence is the code and review history: the initial redesign, feature additions, and follow-up corrections are visible in the repository.</p>
+<p>Those are implemented capabilities, not measured usability gains. I do not have validated before-and-after figures for task completion, traffic, search success, or time saved. The outcomes I can speak to directly are the features implemented, the content maintained, and the issues addressed after launch.</p>
 </section>
 <section id="maintenance">
 <h2>The work after the redesign</h2>
-<p>I continue to maintain content and frontend behavior as the research community’s needs change. HDR follow-up work includes mobile styling, image and alt-text corrections, challenge winners, and link repairs. For example, I corrected the Imageomics “View people” destination and then updated it again to the Ohio State team page through <a href="https://github.com/HDR-Ecosystem/hdr-website/pull/107">PR #107</a> and <a href="https://github.com/HDR-Ecosystem/hdr-website/pull/108">PR #108</a>.</p>
-<p>My Imageomics Institute website work is a related but separate project. Its README credits the HDR platform as the starting point for the header, footer, and search code. The merged history includes my page and content work and a <a href="https://github.com/Imageomics/imageomics.github.io/commit/de93fd6d1bd391157127d45285fa05329ea24aae">news/events pagination fix</a>.</p>
-<p>Further Imageomics work on the <code>post-release-1</code> and <code>mobile-fixes</code> branches includes site-search upgrades, search-index generation, event validation, publication pagination, and mobile menu and carousel fixes. These are development-branch contributions, not claims that every change has shipped to the default branch. The <a href="https://github.com/Imageomics/imageomics.github.io/pull/9">post-release PR</a> and <a href="https://github.com/Imageomics/imageomics.github.io/pull/13">mobile-fixes PR</a> show that continuing work.</p>
+<p>I continue to maintain content and frontend behavior as the research community’s needs change. HDR follow-up work includes mobile styling, image and alt-text corrections, challenge winners, and link repairs. For example, I repaired the Imageomics team link and later updated it to point to the Ohio State team page.</p>
+<p>My Imageomics Institute website work is a related but separate project. It builds on shared ideas from the HDR platform. My work includes page and content development and corrections to news and events pagination.</p>
+<p>My ongoing Imageomics work includes search improvements, event validation, publication pagination, and fixes to mobile navigation and carousel behavior. Some of that work is still in development, so I distinguish it from features already integrated into the site.</p>
 </section>
 <section id="reflection" class="reflection">
 <p class="label">Lessons learned</p>

@@ -27,7 +27,7 @@ On narrow screens, projects, experience, capabilities, scope summaries, and resu
 
 ## Accurate information and functionality
 
-The supplied brief and existing repository remain factual sources. The Imageomics update additionally reviews both research repositories’ code, histories, PRs, and reviews; see [the evidence notes](IMAGEOMICS-EVIDENCE.md). PNC dates and scope, Imageomics platform details, ODOT’s approximately 25% reporting-time reduction, education, GPA, and supported skills are preserved. PNC activity figures are distinguished from conversion outcomes. Internal customer data and proprietary screenshots are omitted. The NSF HDR platform is distinguished from the separate ongoing Imageomics Institute redesign.
+The supplied brief and existing repository remain factual sources. The Imageomics update was checked against both projects’ histories and reviews. Organizational source links, commit identifiers, and branch names are omitted from the public portfolio. PNC dates and scope, Imageomics platform details, ODOT’s approximately 25% reporting-time reduction, education, GPA, and supported skills are preserved. PNC activity figures are distinguished from conversion outcomes. Internal customer data and proprietary screenshots are omitted. The NSF HDR platform is distinguished from the separate ongoing Imageomics Institute redesign.
 
 The previously updated one-page resume PDF is preserved. Existing page URLs, contact destinations, anchored contents, section highlighting, PDF download, readable resume fallback, skip link, reduced motion, and print styling are retained. The site remains static HTML/CSS/JavaScript, compatible with GitHub Pages without a hosting build step.
 
