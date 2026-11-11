@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imageomics Institute Website Development | Jason Amo-Mensah</title>
+<meta name="description" content="Developing the institute’s new website through page implementation, navigation, news and events functionality, and ongoing improvements.">
+<meta name="theme-color" content="#FAFAF8">
+<meta property="og:title" content="Imageomics Institute Website Development | Jason Amo-Mensah">
+<meta property="og:description" content="Developing the institute’s new website through page implementation, navigation, news and events functionality, and ongoing improvements.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+<nav class="nav wrap" aria-label="Main navigation">
+<a class="brand" href="index.html">Jason Amo-Mensah</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden>Menu</button>
+<div class="nav-links" id="nav-links"><a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a>
+</div>
+</nav>
+</header>
+<main id="main" class="wrap" tabindex="-1">
+<div class="case-back"><a href="work.html">← All work</a><span>Website development</span>
+</div>
+<header class="case-heading">
+<p class="label">Ohio State · Imageomics Institute</p>
+<h1>Imageomics Institute Website Development</h1>
+<p class="page-lede">Developing the institute’s new website through page implementation, navigation, news and events functionality, and ongoing improvements.</p>
+<dl class="case-facts">
+<div><dt>My role</dt><dd>Website &amp; Platform Development Intern</dd>
+</div>
+<div><dt>Timeframe</dt><dd>2026 – Present</dd>
+</div></dl>
+</header>
+<p class="case-note">A separate website project within the same Ohio State Imageomics Institute internship as the NSF HDR platform. The institute site remains under active development.</p>
+<div class="case-layout">
+<aside class="case-nav" aria-label="Article contents">
+<nav aria-label="On this page">
+<p class="label">In this article</p><a href="#overview">Overview</a><a href="#problem">The project</a><a href="#role">My role &amp; the team</a><a href="#implementation">Implementation</a><a href="#challenges">Challenges</a><a href="#tools">Tools</a><a href="#outcomes">Outcomes</a><a href="#maintenance">Ongoing work</a><a href="#reflection">Reflection</a>
+</nav>
+</aside>
+<article class="case-content">
+<section id="overview">
+<h2>A new public home for the Imageomics Institute</h2>
+<p>The Imageomics Institute develops ways to study biological information through images and machine learning. Its website needs to explain that work to researchers, students, collaborators, and public visitors, while helping the institute share news, events, people, and resources.</p>
+<p>I contribute to the new institute website through my Website &amp; Platform Development internship at Ohio State. This is a separate project from the NSF HDR community platform: the institute site has its own audiences, content, navigation, and development work.</p>
+</section>
+<section id="problem">
+<h2>Building out a working site while the content develops</h2>
+<p>The new site began with a page structure and shared header and footer. That provided a starting point, but each section still needed content, presentation, and behavior suited to its purpose. A faculty page, a news article, and an event series cannot all be treated as the same kind of page.</p>
+<p>My work has involved developing those sections in stages, incorporating content corrections, and fixing issues as more pages and interactions come together. The website remains under active development, so I distinguish completed contributions from changes still being refined.</p>
+</section>
+<section id="role">
+<h2>My responsibilities and the team’s role</h2>
+<p>I implemented frontend page structures, responsive styles, navigation changes, and JavaScript functionality. My contributions include the initial site files, header and dropdown updates, About-section content, news pages and images, and the events listing. I also work on debugging and maintenance rather than only adding new pages.</p>
+<p>I manage my changes through GitHub commits and pull requests. The work has been split into the initial design, content updates, and later fixes so collaborators can review changes as the site develops. A concrete example of that collaboration was a research-content correction suggested on a news article and incorporated into the shared work.</p>
+<p>Design direction and research content come from collaboration with the designer and institute stakeholders. I translate that direction into working pages and interactions. The site also adapts shared header, footer, and search foundations from the HDR platform; I do not claim that those foundations or every subsequent change were created independently by me.</p>
+</section>
+<section id="implementation">
+<h2>What I worked on</h2>
+<h3>Page structure, header, and navigation</h3>
+<p>I added the initial HTML page structure and shared components, then revised the header, horizontal dropdowns, footer, and supporting CSS and JavaScript. I also developed content across the About section, including community values, conduct, faculty and staff, collaborators, NextGens, and visitor information.</p>
+<p>The practical concern was consistency: shared navigation had to work from both top-level pages and deeper content pages. Component loading and relative paths needed to account for those different locations.</p>
+<h3>News listings and individual articles</h3>
+<p>I worked on the news listing and article pages, brought in news content and images, and refined featured-news behavior and related styling. That work involved page content and media as well as the listing interface. I later corrected pagination styling across the news and events pages.</p>
+<h3>A data-driven events section</h3>
+<p>I implemented an events listing that loads structured JSON data and renders the interface in JavaScript. It supports text search, a year filter, result counts, and pagination. Those are institute-specific features verified in this project; they are not assumed from the HDR implementation.</p>
+<p>The listing consolidates repeated event entries and dates, separates a featured event from regular results, and updates the page state as visitors move through the list. I also added event-data validation tooling and a workflow to check the dataset.</p>
+</section>
+<section id="challenges">
+<h2>Technical challenges and decisions</h2>
+<h3>Keeping event results coherent</h3>
+<p>A recurring event can have several dates but still lead to one page. I handled that by grouping matching event entries and combining their dates, rather than presenting each record as an unrelated event. Filtering also has to update the result count and pagination together, so the controls describe the list the visitor is actually seeing.</p>
+<h3>Updating shared content reliably</h3>
+<p>Shared components help avoid repeating the same header change across every page, but cached content can keep an update from appearing immediately. I worked on component-cache handling when adding the site-wide work-in-progress notice, keeping the displayed status consistent while sections were still being built.</p>
+<h3>Improving mobile behavior in small steps</h3>
+<p>Later development includes constraining tutorial images to the available width, adjusting mobile menu layout and focus handling, and improving carousel swipe and autoplay behavior. These are targeted fixes to specific interactions, rather than a claim that the entire site’s mobile experience is finished.</p>
+</section>
+<section id="tools" class="methods">
+<h2>Tools &amp; methods</h2>
+<p>HTML · CSS · JavaScript · JSON content · Git &amp; GitHub · Pull requests and review · Responsive layout debugging · Event-data validation</p>
+</section>
+<section id="outcomes">
+<h2>Contributions so far</h2>
+<p>The integrated work establishes the site’s page structure, revised navigation, research-facing content, news presentation, and an interactive events section. Follow-up pagination fixes show the maintenance work needed after those pieces are introduced.</p>
+<p>I describe the outcomes through the pages and functionality delivered. I do not have verified before-and-after figures for traffic, usability, or time saved, and the site is still being developed.</p>
+</section>
+<section id="maintenance">
+<h2>Ongoing development</h2>
+<p>My continuing work includes moving news metadata into structured JSON, improving search and indexing, expanding research and publication sections, and addressing mobile layout and interaction issues. Some of these changes are on development branches and have not been integrated into the default branch.</p>
+<p>I continue to update content, debug behavior, and incorporate feedback as the new website takes shape. This work is distinct from maintaining the already redesigned NSF HDR platform, even though both projects sit within the same internship.</p>
+<p><a href="case-imageomics.html">Read about the NSF HDR platform project</a></p>
+</section>
+<section id="reflection" class="reflection">
+<p class="label">Lessons learned</p>
+<h2>Different content needs different implementation choices</h2>
+<p>Working on the institute website has made me more careful about the relationship between content and behavior. Event dates affect grouping and filtering; article images affect mobile layouts; shared navigation affects every section. I try to address those dependencies as part of each change, then keep refining the site as people review and use it.</p>
+</section>
+</article>
+</div><a class="next-case" href="case-asphalt-qcqa.html"><span class="label">Read next</span>
+<h2>ODOT Operational Reporting Improvements <span aria-hidden="true">↗</span></h2></a></main>
+<footer class="footer wrap">
+<p>Jason Amo-Mensah<br><span>Ohio State · Class of 2027</span></p>
+<div><a href="mailto:jasonam84@gmail.com">Email</a><a href="https://www.linkedin.com/in/jasonamomensah">LinkedIn</a><a href="https://github.com/jasonam84">GitHub</a>
+</div><small>© <span id="year">2026</span></small>
+</footer>
+</body>
+</html>

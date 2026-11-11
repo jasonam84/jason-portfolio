@@ -17,7 +17,7 @@ The oversized serif name, artistic type treatment, tiny labels, display numerals
 ## Pages
 
 - **Home:** A modest name heading and personal introduction, followed by PNC and Imageomics features with factual scope, two additional projects, experience, skills, and contact information.
-- **Work:** A readable index of all four projects, with PNC and Imageomics featured first.
+- **Work:** A readable index of all five projects, with PNC and Imageomics featured first.
 - **About:** Personal background and approach, with education details beside the narrative on desktop and after it on mobile.
 - **Case studies:** Clear headings, role/date metadata, factual scope, article contents, readable prose, documented contributions, tools, results, and reflections. No fabricated project artifacts or process diagrams.
 - **Resume:** Readable HTML resume, prominent PDF download, and embedded PDF with fallback links.
@@ -33,7 +33,7 @@ The previously updated one-page resume PDF is preserved. Existing page URLs, con
 
 ## Verification of this revision
 
-- All nine HTML pages pass `html-validate` recommended rules.
+- All ten HTML pages pass `html-validate` recommended rules.
 - JavaScript syntax passes `node --check`.
 - CSS parses without syntax errors with `tinycss2`.
 - Local pages, assets, PDF links, fragments, IDs, landmarks, language, metadata, and content guardrails pass `scripts/check_site.py`.
@@ -44,6 +44,14 @@ Earlier revisions were tested in Chrome at 1440, 768, 390, and 320px with axe an
 
 ## Source and deployment
 
-Shared page composition is in `scripts/build.py`; case data is in `templates/projects.json`. All nine generated HTML files are committed for direct hosting. The local workspace contains the current output, and a separate Git checkout at `/tmp/jason-portfolio-review` holds the review branch `redesign/product-portfolio`.
+Shared page composition is in `scripts/build.py`; employment and original case data are in `templates/projects.json`; separate institute-project metadata is in `templates/imageomics-website.json`. All ten generated HTML files are committed for direct hosting. The local workspace contains the current output, and a separate Git checkout at `/tmp/jason-portfolio-review` holds the review branch `redesign/product-portfolio`.
 
 No main-branch merge or Pages deployment is part of this change. The connected GitHub integration previously returned a 403 when creating a pull request. See README.md for local preview, content regeneration, and GitHub Pages deployment instructions.
+
+## Two Imageomics projects
+
+Home and Work group the NSF HDR platform and new Imageomics Institute website under one Ohio State internship. Both have dedicated case pages and cross-links. The experience and HTML resume list one Imageomics employer entry with two project links. The existing PDF remains consistent with that single internship.
+
+The new institute case uses verified initial site files, header/dropdown work, About content, news presentation, JSON-driven events, year filtering, pagination, event validation, content review, and pagination corrections. Later search, research/publication, and mobile changes are identified as ongoing development rather than assumed shipped features. HDR-specific event filters and page counts are not assigned to the institute site. Organizational code, repository links, commit links, and branch names remain absent from the public pages.
+
+Current validation covers ten HTML pages, internal links and anchors, generated content, single-employer grouping, source-link absence, CSS parsing, and JavaScript syntax. Browser validation was not rerun for this content change.

@@ -16,10 +16,12 @@ Open <http://127.0.0.1:8765>. Every page also works as static files. Email opens
 
 - `scripts/build.py` contains the shared page shell, navigation, footer, and page composition.
 - `templates/projects.json` holds project summaries, roles, dates, responsibilities, methods, and outcomes.
-- `templates/case-imageomics.html` contains the detailed HDR/Imageomics case. It describes contributions without displaying or linking to organizational source code.
+- `templates/case-imageomics.html` contains the NSF HDR case.
+- `templates/case-imageomics-website.html` and `templates/imageomics-website.json` contain the separate institute website case and project metadata. Employment remains a single Imageomics record in `templates/projects.json`.
+- Both case studies describe contributions without displaying or linking to organizational source code.
 - `assets/css/style.css` defines readable typography, consistent spacing, responsive layouts, focus states, reduced motion, and print styles.
 - `assets/js/main.js` progressively enhances mobile navigation and case-study section highlighting.
-- The nine committed HTML files are the deployable output. They include complete content and navigation without JavaScript.
+- The ten committed HTML files are the deployable output. They include complete content and navigation without JavaScript.
 
 After changing content or shared components:
 
@@ -52,10 +54,10 @@ node --check assets/js/main.js
 
 Additional optional checks used for this redesign:
 
-- HTML: `html-validate` 9.7.1, default recommended rules, across all nine HTML files.
+- HTML: `html-validate` 9.7.1, default recommended rules, across all ten HTML files.
 - CSS: `tinycss2` syntax parsing, plus rendering in Chrome.
-- Browser: Python Playwright with the locally installed Google Chrome; all nine pages at 1440, 768, 390, and 320 CSS pixels.
-- Accessibility: `axe-core` WCAG 2 A/AA and 2.1 AA rules, all nine pages at desktop and mobile sizes.
+- Earlier browser validation: Python Playwright with local Google Chrome, covering the previous nine-page site at 1440, 768, 390, and 320 CSS pixels. The current content update was not rerun in a browser.
+- Earlier accessibility validation: `axe-core` WCAG 2 A/AA and 2.1 AA rules on the previous nine-page site. These results do not verify the new institute case.
 
 To reproduce browser QA, install Playwright and axe-core in an isolated tooling environment, start the preview server, and run:
 

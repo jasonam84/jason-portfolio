@@ -68,7 +68,7 @@
     "date": "June 2025 – Present",
     "role": "Website & Platform Development Intern",
     "theme": "research",
-    "desc": "Frontend development, migration, and ongoing maintenance for the NSF HDR research community, with related work on the Imageomics Institute website.",
+    "desc": "Migration from Google Sites to GitHub, frontend development across a 30+ page research platform, and continued feature work and maintenance.",
     "metrics": [
       [
         "30+",
@@ -118,8 +118,18 @@
     ],
     "results": "The shared platform supports content discovery through site search, event filters, responsive pagination, and dynamic event selection. Repository history documents the redesign and continued fixes; no measured usability or traffic gain is claimed.",
     "lesson": "A migration is as much a content and coordination problem as a coding problem. Clear structure, review steps, and reusable components make a platform easier for the next person to maintain.",
-    "note": "The NSF HDR Ecosystem platform and Imageomics Institute website are separate codebases. This case focuses on the HDR platform, then explains the related Imageomics work and its development-branch status.",
-    "experience_summary": "Develop and maintain research websites through frontend implementation, feature work, debugging, and stakeholder review. My work spans the NSF HDR platform and the separate Imageomics Institute website."
+    "note": "One of two distinct website projects within my Ohio State Imageomics Institute internship. The HDR platform serves the wider five-institute research community.",
+    "experience_summary": "Develop and maintain two research websites through frontend implementation, feature work, debugging, and stakeholder review.",
+    "project_entries": [
+      [
+        "NSF HDR Platform Development & Redesign",
+        "case-imageomics.html"
+      ],
+      [
+        "Imageomics Institute Website Development",
+        "case-imageomics-website.html"
+      ]
+    ]
   },
   {
     "slug": "case-asphalt-qcqa.html",

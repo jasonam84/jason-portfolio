@@ -30,6 +30,6 @@ for name,page in pages.items():
   target=(page.path.parent/unquote(u.path)).resolve() if u.path else page.path
   if not target.is_file():errors.append(f'{name}: missing {link}')
   if u.fragment and target.name in pages and u.fragment not in pages[target.name].ids:errors.append(f'{name}: missing fragment {link}')
-assert len(pages)==9,f'Expected 9 pages, found {len(pages)}'
+assert len(pages)==10,f'Expected 10 pages, found {len(pages)}'
 assert not errors,'\n'.join(errors)
 print(f'PASS: {len(pages)} pages; local links, fragments, metadata, landmarks, unique ids, and content guardrails.')

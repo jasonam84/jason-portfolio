@@ -5,6 +5,8 @@ import json
 import re
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = json.loads((ROOT / 'templates/projects.json').read_text())
+INSTITUTE_PROJECT = json.loads((ROOT / 'templates/imageomics-website.json').read_text())
+CASE_PROJECTS = PROJECTS[:2] + [INSTITUTE_PROJECT] + PROJECTS[2:]
 NAV = [('Home', 'index.html'), ('Work', 'work.html'), ('About', 'about.html'), ('Resume', 'resume.html'), ('Contact', 'contact.html')]
 
 
@@ -54,13 +56,26 @@ def skills():
     return '<dl class="capabilities">' + ''.join(f'<div><dt>{e(name)}</dt><dd>{e(items)}</dd></div>' for name, items in groups) + '</dl>'
 
 
+def experience_projects(project):
+    entries = project.get('project_entries', [])
+    if not entries:
+        return ''
+    return '<ul class="experience-projects">' + ''.join(f'<li><a href="{url}">{e(name)}</a></li>' for name, url in entries) + '</ul>'
+
+
 def experience():
-    return '<div class="experience-list">' + ''.join(f'''<article class="experience-row"><p class="experience-date">{e(p['date'])}</p><div><h3><a href="{p['slug']}">{e(p['org'])}</a></h3><p>{e(p['role'])}</p>{f'<p class="experience-summary">{e(p["experience_summary"])}</p>' if p.get('experience_summary') else ''}</div></article>''' for p in PROJECTS) + '</div>'
+    rows = []
+    for p in PROJECTS:
+        summary = f'<p class="experience-summary">{e(p["experience_summary"])}</p>' if p.get('experience_summary') else ''
+        rows.append(f'<article class="experience-row"><p class="experience-date">{e(p["date"])}</p><div><h3>{e(p["org"])}</h3><p>{e(p["role"])}</p>{summary}{experience_projects(p)}</div></article>')
+    return '<div class="experience-list">' + ''.join(rows) + '</div>'
 
 
 def featured_work():
     return '''<article class="feature feature-pnc"><div class="feature-index"><span>PNC Financial Services</span><span>Summer 2026</span></div><div class="feature-main"><div><p class="label">Digital product · Insights & optimization</p><h3><a href="case-pnc.html">Digital banking experience analysis</a></h3><p>Where do customers get stuck? I used session replays, funnel analysis, and customer feedback to help digital product teams understand the friction.</p><a class="read-link" href="case-pnc.html">Read the PNC case study <span aria-hidden="true">↗</span></a></div><aside class="scope-note" aria-label="PNC analysis scope"><p class="label">The scope of the work</p>''' + metrics(PROJECTS[0]['metrics']) + '''<p class="note">Analysis volume, rather than measured changes in conversion.</p></aside></div></article>
-<article class="feature feature-hdr"><div class="feature-index"><span>Ohio State · Imageomics Institute</span><span>2025–Present</span></div><div class="hdr-layout"><aside class="platform-scope" aria-label="Research platform scope"><h4>Project scope</h4><dl class="metrics"><div><dt>30+ pages</dt><dd>rebuilt and migrated</dd></div><div><dt>5 institutes</dt><dd>served by one research platform</dd></div></dl><p>Google Sites to GitHub migration</p></aside><div class="hdr-story"><p class="label">Website & platform development</p><h3><a href="case-imageomics.html">NSF HDR platform development & redesign</a></h3><p>I implemented frontend pages and features for the HDR research community, then continued improving search, event listings, mobile layouts, and links. I also contribute to the separate Imageomics Institute website.</p><a class="read-link" href="case-imageomics.html">Read the NSF HDR case study <span aria-hidden="true">↗</span></a></div></div></article>'''
+<section class="imageomics-projects" aria-labelledby="imageomics-projects-heading"><div class="internship-heading"><h3 id="imageomics-projects-heading">The Ohio State University · Imageomics Institute</h3><p>Website & Platform Development Intern · June 2025–Present</p><p>Two distinct websites developed through the same internship.</p></div>
+<article class="feature feature-hdr"><div class="hdr-layout"><div class="hdr-story"><p class="label">Project 1 · Research community platform</p><h4><a href="case-imageomics.html">NSF HDR Platform Development & Redesign</a></h4><p>I migrated Google Sites content to GitHub and developed and maintained frontend pages and features for the HDR research community, including search, event filtering, pagination, and dynamic content.</p><a class="read-link" href="case-imageomics.html">Read the NSF HDR case study <span aria-hidden="true">↗</span></a></div><aside class="platform-scope" aria-label="HDR project scope"><p class="label">Project scope</p><dl class="metrics"><div><dt>30+ pages</dt><dd>developed and maintained</dd></div><div><dt>5 institutes</dt><dd>served by one research platform</dd></div></dl></aside></div></article>
+<article class="feature feature-institute"><p class="label">Project 2 · Institute website</p><h4><a href="case-imageomics-website.html">Imageomics Institute Website Development</a></h4><p>I contribute to the institute’s new website through page development, navigation, news and events functionality, and ongoing fixes. The work has its own content and implementation, separate from the HDR platform.</p><a class="read-link" href="case-imageomics-website.html">Read the Imageomics website case study <span aria-hidden="true">↗</span></a></article></section>'''
 
 
 def other_work():
@@ -96,18 +111,24 @@ def evidence(index):
     return ''
 
 
-for i, p in enumerate(PROJECTS):
-    overview, problem, role, approach, impact, reflection = HEADINGS[i]
-    toc = [('overview', 'Overview'), ('problem', 'The problem'), ('role', 'My role'), ('approach', 'The work'), ('tools', 'Tools'), ('impact', 'Results'), ('reflection', 'Reflection')]
-    # Text-based account of the actual work; no invented artifacts or process graphics.
-    process = ''.join(f'<div class="approach-entry"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in p['steps'])
-    article = f'''<section id="overview"><h2>{e(overview)}</h2><p>{e(p['desc'])}</p></section><section id="problem"><h2>{e(problem)}</h2><p>{e(p['problem'])}</p></section><section id="role"><h2>{e(role)}</h2><ul class="responsibility-list">{''.join('<li>'+e(t)+'</li>' for t in p['responsibilities'])}</ul></section><section id="approach"><h2>{e(approach)}</h2>{process}{evidence(i)}</section><section id="tools" class="methods"><h2>Tools & methods</h2><p>{e(' · '.join(p['tools']))}</p></section><section id="impact"><h2>{e(impact)}</h2><p>{e(p['results'])}</p></section><section id="reflection" class="reflection"><p class="label">Lessons learned</p><h2>{e(reflection)}</h2><p>{e(p['lesson'])}</p></section>'''
-    if p['theme'] == 'research':
-        article = (ROOT / 'templates/case-imageomics.html').read_text()
-        toc = [('overview', 'Overview'), ('problem', 'Migration'), ('role', 'My role & the team'), ('approach', 'Implementation'), ('architecture', 'Decisions & tradeoffs'), ('tools', 'Tools'), ('impact', 'Outcomes'), ('maintenance', 'Ongoing work'), ('reflection', 'Reflection')]
-    nxt = PROJECTS[(i + 1) % len(PROJECTS)]
-    page(p['slug'], p['name'], p['desc'], f'''<div class="case-back"><a href="work.html">← All work</a><span>{e(p['category'])}</span></div><header class="case-heading"><p class="label">{e(p['org'])}</p><h1>{e(p['name'])}</h1><p class="page-lede">{e(p['desc'])}</p><dl class="case-facts"><div><dt>My role</dt><dd>{e(p['role'])}</dd></div><div><dt>Timeframe</dt><dd>{e(p['date'])}</dd></div></dl></header><section class="case-scope" aria-label="Project scope">{metrics(p['metrics'])}</section>{f'<p class="case-note">{e(p["note"])}</p>' if p.get('note') else ''}<div class="case-layout"><aside class="case-nav" aria-label="Article contents"><nav aria-label="On this page"><p class="label">In this article</p>{''.join(f'<a href="#{id}">{name}</a>' for id, name in toc)}</nav></aside><article class="case-content">{article}</article></div><a class="next-case" href="{nxt['slug']}"><span class="label">Read next</span><h2>{e(nxt['name'])} <span aria-hidden="true">↗</span></h2></a>''', active='work.html')
+for i, p in enumerate(CASE_PROJECTS):
+    if p['theme'] in ('research', 'institute'):
+        filename = 'case-imageomics.html' if p['theme'] == 'research' else 'case-imageomics-website.html'
+        article = (ROOT / 'templates' / filename).read_text()
+        if p['theme'] == 'research':
+            toc = [('overview', 'Overview'), ('problem', 'Migration'), ('role', 'My role & the team'), ('approach', 'Implementation'), ('architecture', 'Decisions & tradeoffs'), ('tools', 'Tools'), ('impact', 'Outcomes'), ('maintenance', 'Ongoing work'), ('reflection', 'Reflection')]
+        else:
+            toc = [('overview', 'Overview'), ('problem', 'The project'), ('role', 'My role & the team'), ('implementation', 'Implementation'), ('challenges', 'Challenges'), ('tools', 'Tools'), ('outcomes', 'Outcomes'), ('maintenance', 'Ongoing work'), ('reflection', 'Reflection')]
+    else:
+        overview, problem, role, approach, impact, reflection = HEADINGS[PROJECTS.index(p)]
+        toc = [('overview', 'Overview'), ('problem', 'The problem'), ('role', 'My role'), ('approach', 'The work'), ('tools', 'Tools'), ('impact', 'Results'), ('reflection', 'Reflection')]
+        # Text-based account of the actual work; no invented artifacts or process graphics.
+        process = ''.join(f'<div class="approach-entry"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in p['steps'])
+        article = f'''<section id="overview"><h2>{e(overview)}</h2><p>{e(p['desc'])}</p></section><section id="problem"><h2>{e(problem)}</h2><p>{e(p['problem'])}</p></section><section id="role"><h2>{e(role)}</h2><ul class="responsibility-list">{''.join('<li>'+e(t)+'</li>' for t in p['responsibilities'])}</ul></section><section id="approach"><h2>{e(approach)}</h2>{process}{evidence(PROJECTS.index(p))}</section><section id="tools" class="methods"><h2>Tools & methods</h2><p>{e(' · '.join(p['tools']))}</p></section><section id="impact"><h2>{e(impact)}</h2><p>{e(p['results'])}</p></section><section id="reflection" class="reflection"><p class="label">Lessons learned</p><h2>{e(reflection)}</h2><p>{e(p['lesson'])}</p></section>'''
+    scope = '<section class="case-scope" aria-label="Project scope">' + metrics(p['metrics']) + '</section>' if p['metrics'] else ''
+    nxt = CASE_PROJECTS[(i + 1) % len(CASE_PROJECTS)]
+    page(p['slug'], p['name'], p['desc'], f'''<div class="case-back"><a href="work.html">← All work</a><span>{e(p['category'])}</span></div><header class="case-heading"><p class="label">{e(p['org'])}</p><h1>{e(p['name'])}</h1><p class="page-lede">{e(p['desc'])}</p><dl class="case-facts"><div><dt>My role</dt><dd>{e(p['role'])}</dd></div><div><dt>Timeframe</dt><dd>{e(p['date'])}</dd></div></dl></header>{scope}{f'<p class="case-note">{e(p["note"])}</p>' if p.get('note') else ''}<div class="case-layout"><aside class="case-nav" aria-label="Article contents"><nav aria-label="On this page"><p class="label">In this article</p>{''.join(f'<a href="#{id}">{name}</a>' for id, name in toc)}</nav></aside><article class="case-content">{article}</article></div><a class="next-case" href="{nxt['slug']}"><span class="label">Read next</span><h2>{e(nxt['name'])} <span aria-hidden="true">↗</span></h2></a>''', active='work.html')
 
-resume_experience = ''.join(f'<section class="resume-role"><div><h3>{e(p["org"])}</h3><p class="resume-date">{e(p["date"])}</p></div><p class="resume-role-title">{e(p["role"])}</p><ul>'+''.join(f'<li>{e(t)}</li>' for t in p['responsibilities'])+'</ul></section>' for p in PROJECTS)
+resume_experience = ''.join(f'<section class="resume-role"><div><h3>{e(p["org"])}</h3><p class="resume-date">{e(p["date"])}</p></div><p class="resume-role-title">{e(p["role"])}</p><ul>'+''.join(f'<li>{e(t)}</li>' for t in p['responsibilities'])+'</ul>'+experience_projects(p)+'</section>' for p in PROJECTS)
 page('resume.html', 'Resume', 'Read and download Jason Amo-Mensah’s resume: Ohio State MIS, digital product analytics, website development, and process improvement.', f'''<section class="page-intro resume-heading"><div><p class="label">Resume</p><h1>Resume</h1></div><div><a class="download-link" href="resume.pdf" download="Jason-Amo-Mensah-Resume.pdf">Download PDF <span aria-hidden="true">↓</span></a><p class="note">Updated November 2026</p></div></section><section class="resume-text"><div class="resume-identity"><h2>Jason Amo-Mensah</h2><p><a href="mailto:jasonam84@gmail.com">jasonam84@gmail.com</a> · <a href="https://www.linkedin.com/in/jasonamomensah">LinkedIn</a></p></div><div class="resume-section"><h2>Education</h2><div><h3>The Ohio State University, Fisher College of Business</h3><p>Bachelor of Science in Business Administration<br>Management Information Systems · Expected May 2027 · GPA 3.5</p></div></div><div class="resume-section"><h2>Experience</h2><div>{resume_experience}</div></div><div class="resume-section"><h2>Skills</h2>{skills()}</div></section><section class="resume-preview" aria-label="Resume PDF preview"><div class="document-bar"><h2>The PDF version</h2><a href="resume.pdf">Open PDF ↗</a></div><object data="resume.pdf" type="application/pdf" title="Jason Amo-Mensah resume PDF"><p>Your browser cannot preview this PDF. <a href="resume.pdf">Open or download the resume</a>, or read the text above.</p></object></section>''')
-print('Generated 9 portfolio pages.')
+print('Generated 10 portfolio pages.')
