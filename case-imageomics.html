@@ -1,362 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NSF HDR Platform Redesign | Jason Amo-Mensah</title>
-  <meta name="description" content="NSF HDR Platform Redesign built through Imageomics for a five-institute, public-facing research community.">
+  <title>NSF HDR Research Platform Redesign | Jason Amo-Mensah</title>
+  <meta name="description" content="A Google Sites-to-GitHub migration and frontend rebuild for a public research community spanning five institutes.">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta property="og:title" content="NSF HDR Research Platform Redesign | Jason Amo-Mensah">
+  <meta property="og:description" content="A Google Sites-to-GitHub migration and frontend rebuild for a public research community spanning five institutes.">
+  <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-
-<div id="progress"></div>
-
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="header">
-  <nav class="nav">
-    <a class="brand" href="work.html">← Work</a>
-    <div class="nav-links">
-      <a href="resume.html">Resume</a>
-    </div>
-  </nav>
+<nav class="nav wrap" aria-label="Main navigation">
+<a class="brand" href="index.html"><span class="monogram" aria-hidden="true">ja<span>.</span></span><span>Jason Amo-Mensah</span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" hidden>Menu <span aria-hidden="true">＋</span></button>
+<div class="nav-links" id="nav-links"><a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a>
+</div>
+</nav>
 </header>
-
-<main class="main case-layout">
-
-  <!-- SIDE NAV -->
-  <aside class="case-nav">
-    <ul>
-      <li><a href="#summary">Summary</a></li>
-      <li><a href="#context">Context</a></li>
-      <li><a href="#problem">Problem</a></li>
-      <li><a href="#users">Users</a></li>
-      <li><a href="#role">My role</a></li>
-      <li><a href="#constraints">Constraints</a></li>
-      <li><a href="#approach">Approach</a></li>
-      <li><a href="#design">Design</a></li>
-      <li><a href="#architecture">Structure</a></li>
-      <li><a href="#implementation">Implementation</a></li>
-      <li><a href="#evidence">Evidence</a></li>
-      <li><a href="#impact">Impact</a></li>
-      <li><a href="#tradeoffs">Tradeoffs</a></li>
-      <li><a href="#risk">Risk</a></li>
-      <li><a href="#approvals">Approvals</a></li>
-      <li><a href="#next">Next</a></li>
-      <li><a href="#reflection">Reflection</a></li>
-    </ul>
-  </aside>
-
-  <!-- CONTENT -->
-  <article class="case-content">
-
-    <!-- SUMMARY -->
-    <section id="summary" class="reveal">
-      <h1>NSF HDR Platform Redesign</h1>
-      <p class="case-meta">
-        Built through Imageomics · Serves five institutes · Public-facing
-      </p>
-
-      <blockquote>
-        Public systems don’t usually fail all at once.
-        They slowly become harder to use until people stop trusting them.
-      </blockquote>
-
-      <p>
-        I worked on this platform through Imageomics. Imageomics owned and
-        maintained the site, and it served the full NSF HDR community across
-        five research institutes while remaining open to the public.
-      </p>
-
-      <p>
-        Researchers, faculty, staff, and external visitors used the site
-        to find shared resources, understand programs, and submit requests.
-        Over time, the structure stopped holding up.
-      </p>
-
-      <p>
-        I migrated the platform from Google Sites to GitHub and rebuilt it
-        using HTML, CSS, and JavaScript. The project was not just about
-        making the site look better. It was about making it easier to use,
-        easier to update, and less confusing for the people relying on it.
-      </p>
-      <p>
-        The production code now spans 30+ HTML pages with shared frontend
-        architecture for institutes, resources, events, publications, and
-        ML challenge workflows.
-      </p>
-    </section>
-
-    <!-- CONTEXT -->
-    <section id="context" class="reveal">
-      <h2>Context</h2>
-      <p>
-        Imageomics hosted and maintained a public-facing platform on behalf
-        of the NSF HDR program.
-      </p>
-
-      <p>
-        The site needed to work for multiple audiences at once: internal
-        teams across five institutes and members of the public looking
-        for clear, reliable information.
-      </p>
-
-      <p>
-        During 2025-2026, NSF-related funding uncertainty and program
-        disruptions increased the need for a stable public platform to
-        preserve resources, institutional history, and cross-institute access.
-      </p>
-
-      <p>
-        The redesign required migrating all content from the legacy site
-        while keeping accuracy, accessibility, and formal approval intact.
-      </p>
-    </section>
-
-    <!-- PROBLEM -->
-    <section id="problem" class="reveal">
-      <h2>Problem</h2>
-      <p>
-        The core challenge wasn’t adding features. It was helping a growing
-        platform stay clear and usable as needs expanded over time.
-      </p>
-
-      <ul>
-        <li>Navigation had grown around program history more than user tasks</li>
-        <li>Related content ended up spread across multiple sections</li>
-        <li>Approval steps were not always easy to follow</li>
-        <li>Public and internal information needed clearer separation</li>
-      </ul>
-    </section>
-
-    <!-- USERS -->
-    <section id="users" class="reveal">
-      <h2>Users</h2>
-      <ul>
-        <li><strong>Researchers</strong> across five institutes using shared resources</li>
-        <li><strong>Faculty</strong> tracking approvals and timelines</li>
-        <li><strong>Administrative staff</strong> coordinating requests and documentation</li>
-        <li><strong>Public visitors</strong> learning about the program and its work</li>
-      </ul>
-    </section>
-
-    <!-- ROLE -->
-    <section id="role" class="reveal">
-      <h2>My role</h2>
-      <p>
-        <strong>Scope &amp; ownership:</strong> I coded the site end to end,
-        handled the Google Sites-to-GitHub migration, and built the frontend
-        structure needed to publish and maintain it in production. I worked
-        from UX direction provided by the designer.
-      </p>
-
-      <ul>
-        <li>Coded the site across 30+ pages in HTML, CSS, and JavaScript</li>
-        <li>Built and maintained shared header/footer components with dynamic path handling</li>
-        <li>Built automatic home-page event updates so current events could be surfaced without manual page edits</li>
-        <li>Migrated and QAed legacy Google Sites content into GitHub-hosted pages</li>
-        <li>Implemented client-side search indexing across site pages and dynamic content</li>
-        <li>Built filter and pagination logic for events, news, and challenge views</li>
-        <li>Added redirect pages to preserve legacy URLs and reduce broken links after launch</li>
-      </ul>
-
-      <p>
-        Migration often meant reconciling outdated or conflicting content
-        with stakeholders instead of just copying pages over.
-      </p>
-    </section>
-
-    <!-- CONSTRAINTS -->
-    <section id="constraints" class="reveal">
-      <h2>Constraints</h2>
-      <ul>
-        <li>The site had to work for both public visitors and internal program needs without blurring the line between them</li>
-        <li>Content could not be moved over blindly because accuracy and approval mattered more than publishing quickly</li>
-        <li>The platform needed to remain stable through funding uncertainty, staffing changes, and shifting ownership</li>
-        <li>The build needed to stay maintainable over time without adding unnecessary complexity</li>
-        <li>The final system needed to be easy to update and hand off without recreating the same maintenance problems later</li>
-      </ul>
-    </section>
-
-    <!-- APPROACH -->
-    <section id="approach" class="reveal">
-      <h2>Approach</h2>
-      <ul>
-        <li>Listed common tasks by audience</li>
-        <li>Separated public information from internal workflows</li>
-        <li>Grouped content around intent, not initiatives</li>
-        <li>Shipped in small steps to avoid disruption</li>
-      </ul>
-    </section>
-
-    <!-- DESIGN -->
-    <section id="design" class="reveal">
-      <h2>Design decisions</h2>
-      <p>
-        This was not just visual cleanup. We also reworked how people moved
-        through the site, how content was grouped, and how quickly users
-        could find what they needed.
-      </p>
-      <p>
-        The UX designer led the design decisions, and I focused on implementing
-        them in production.
-      </p>
-      <ul>
-        <li>Defined a clearer top-level information hierarchy around user intent</li>
-        <li>Standardized card, section, and CTA patterns so pages felt consistent</li>
-        <li>Established a reusable visual language across institutes, events, and resources</li>
-        <li>Improved readability through spacing, headings, and content chunking decisions</li>
-        <li>I implemented navigation behavior so it stayed predictable across desktop and mobile states</li>
-        <li>I supported accessibility basics in production with meaningful alt text, labels, and keyboard-friendly controls</li>
-      </ul>
-    </section>
-
-    <!-- STRUCTURE -->
-    <section id="architecture" class="reveal">
-      <h2>Structure before and after</h2>
-
-      <p>
-        The original navigation grew around individual programs and
-        initiatives. As more work was added, top-level options multiplied
-        and similar content ended up split across sections.
-      </p>
-
-      <p>
-        I reorganized the navigation around what people actually came to
-        do. Related work was grouped under shared categories, and
-        program-specific content moved one level down. This reduced
-        top-level choices and made the site easier to scan without losing depth.
-      </p>
-
-      <div class="callout">
-        <strong>What changed:</strong> the earlier navigation hid too much under broader categories,
-        while the updated structure made key sections like institutes, resources, news, publications,
-        challenges, and events easier to reach directly from the main navigation.
-      </div>
-    </section>
-
-    <!-- IMPLEMENTATION -->
-    <section id="implementation" class="reveal">
-      <h2>Implementation</h2>
-      <ul>
-        <li>Vanilla HTML, CSS, and JavaScript across 30+ pages</li>
-        <li>Component loading system for consistent header/footer across directory depths</li>
-        <li>Client-side search indexing with page crawling and query normalization</li>
-        <li>Data-driven events/news rendering with responsive mobile/desktop pagination</li>
-        <li>Separate carousel logic for home and conference pages, including controls and autoplay</li>
-        <li>Challenge status logic with deadline-based badges, countdowns, and filters</li>
-        <li>Legacy redirect pages to preserve high-traffic links after migration</li>
-      </ul>
-    </section>
-
-    <section id="evidence" class="reveal">
-      <h2>Evidence in the work</h2>
-      <p>
-        A lot of this project was infrastructure work, so the strongest proof
-        is not one flashy screen. It is the amount of messy work the new
-        system could handle without becoming harder to maintain.
-      </p>
-
-      <p>
-        One example of this was the site search. Instead of making users click
-        through page after page, I added client-side search so people could
-        find resource-related content across different parts of the site more quickly.
-      </p>
-
-      <div class="callout">
-        <strong>Search improvement:</strong> I added client-side search so people could find resource-related content across multiple pages without manually clicking through the site section by section.
-      </div>
-
-      <p>
-        I also rebuilt shared page structure so updates did not have to be
-        repeated manually everywhere, and I cleaned up migrated content instead
-        of moving old pages over as-is.
-      </p>
-
-      <div class="callout">
-        <strong>What this looked like in practice:</strong> map the old site,
-        group pages by real user intent, rebuild shared UI patterns, move
-        content into the new structure, check accuracy with staff, preserve
-        important legacy links, and publish in smaller waves instead of all at once.
-      </div>
-    </section>
-
-    <!-- IMPACT -->
-    <section id="impact" class="reveal">
-      <h2>Impact</h2>
-      <ul>
-        <li>Unified five-institute content into a single public reference point</li>
-        <li>Preserved access to key resources during a funding transition period</li>
-        <li>Made updates easier by centralizing shared navigation and footer components</li>
-        <li>Reduced migration risk by keeping legacy links alive through explicit redirects</li>
-        <li>Improved discoverability with searchable pages and filterable event/news views</li>
-      </ul>
-    </section>
-
-    <!-- TRADEOFFS -->
-    <section id="tradeoffs" class="reveal">
-      <h2>Tradeoffs</h2>
-      <ul>
-        <li>We focused more on getting the content and structure right than on adding extra features</li>
-        <li>Manual review took more time, but it helped avoid publishing pages with outdated or incorrect information</li>
-        <li>Some parts of the build stayed simple on purpose so the site would be easier to update and hand off later</li>
-      </ul>
-    </section>
-
-    <!-- RISK -->
-    <section id="risk" class="reveal">
-      <h2>What could’ve gone wrong</h2>
-      <ul>
-        <li>Moving over outdated content without catching it first</li>
-        <li>Breaking links or page paths during the migration to GitHub</li>
-        <li>Publishing updates before content had been fully checked</li>
-        <li>Making the structure look cleaner without actually making things easier to find</li>
-      </ul>
-    </section>
-
-    <!-- APPROVALS -->
-    <section id="approvals" class="reveal">
-      <h2>Approval flow</h2>
-      <ul>
-        <li>The designer shared the page or update that needed to be built</li>
-        <li>I coded the changes and pushed them to GitHub</li>
-        <li>Content and accuracy were checked before release</li>
-        <li>Once approved, the update was published to the main site</li>
-      </ul>
-    </section>
-
-    <!-- NEXT -->
-    <section id="next" class="reveal">
-      <h2>What I’d do next</h2>
-      <p>The main build is complete, so the work now is mostly maintenance. Any future changes would likely be smaller content updates, routine upkeep, and improvements based on how people use the site over time.</p>
-    </section>
-
-    <!-- REFLECTION -->
-    <section id="reflection" class="reveal">
-      <h2>Reflection</h2>
-      <ul>
-        <li>Public-facing systems raise the stakes</li>
-        <li>Migration is where trust is earned</li>
-        <li>Structure matters more than features</li>
-      </ul>
-    </section>
-
-  </article>
-
-</main>
-
+<main id="main" class="wrap" tabindex="-1">
+<div class="case-back"><a class="text-link" href="work.html">← All work</a><span class="tiny-label">CASE STUDY / 02</span>
+</div>
+<section class="case-hero">
+<p class="eyebrow">Platform development</p>
+<h1>NSF HDR Research Platform Redesign<span class="blue">.</span></h1>
+<p class="lede">A Google Sites-to-GitHub migration and frontend rebuild for a public research community spanning five institutes.</p>
+<dl class="case-facts">
+<div><dt>ORGANIZATION</dt><dd>Ohio State · Imageomics Institute</dd>
+</div>
+<div><dt>ROLE</dt><dd>Website &amp; Platform Development Intern</dd>
+</div>
+<div><dt>TIMEFRAME</dt><dd>June 2025 – Present</dd>
+</div></dl>
+</section>
+<div class="project-visual research visual-large" aria-hidden="true">
+<div class="browser-top"><i></i><i></i><i></i><span>NSF HDR · Structure illustration</span>
+</div>
+<div class="research-title">A shared home<br>for discovery<span>.</span>
+</div>
+<div class="research-map"><b>Institutes</b><b>Resources</b><b>Publications</b><b>Events</b>
+</div>
+<div class="tiny-label">30+ PAGES · ONE CONNECTED PLATFORM</div>
+</div>
+<p class="visual-caption">Conceptual illustration of the project’s methods and scope.</p>
+<p class="case-note">The NSF HDR platform and the ongoing Imageomics Institute website redesign are separate efforts. This case focuses on the NSF HDR platform.</p>
+<div class="case-layout">
+<aside class="case-nav">
+<nav aria-label="On this page">
+<p class="eyebrow">IN THIS CASE</p><a href="#overview">Overview</a><a href="#problem">The opportunity</a><a href="#role">My responsibilities</a><a href="#approach">Approach &amp; process</a><a href="#tools">Tools &amp; methods</a><a href="#impact">Results &amp; impact</a><a href="#reflection">Lessons learned</a>
+</nav>
+</aside>
+<article class="case-content">
+<section id="overview">
+<p class="eyebrow">01 / PROJECT OVERVIEW</p>
+<h2>Making research easier to find.</h2>
+<p>A Google Sites-to-GitHub migration and frontend rebuild for a public research community spanning five institutes.</p>
+<dl class="metrics">
+<div><dt>30+</dt><dd>pages rebuilt and migrated</dd>
+</div>
+<div><dt>5</dt><dd>research institutes served</dd>
+</div>
+<div><dt>Shared</dt><dd>frontend architecture</dd>
+</div></dl>
+</section>
+<section id="problem">
+<p class="eyebrow">02 / THE OPPORTUNITY</p>
+<h2>The question behind the work.</h2>
+<p>Researchers, faculty, staff, and public visitors needed to find resources across a growing platform. Content was spread across sections, navigation had become difficult to scan, and the migration had to preserve accuracy and important links.</p>
+</section>
+<section id="role">
+<p class="eyebrow">03 / MY RESPONSIBILITIES</p>
+<h2>Where I contributed.</h2>
+<ul class="responsibility-list">
+<li>Implemented the frontend in HTML, CSS, and JavaScript, working from the designer’s UX direction.</li>
+<li>Migrated and reviewed content across a 30+ page NSF HDR platform.</li>
+<li>Built shared page structure, responsive navigation, and client-side search.</li>
+<li>Collaborated with designers and research stakeholders on content accuracy and publishing reviews.</li></ul>
+</section>
+<section id="approach">
+<p class="eyebrow">04 / APPROACH &amp; PROCESS</p>
+<h2>From understanding to action.</h2>
+<ol class="process-list">
+<li><span class="process-number">01</span>
+<div>
+<h3>Map the content</h3>
+<p>Review legacy pages and identify the tasks of researchers, staff, and public visitors.</p>
+</div></li>
+<li><span class="process-number">02</span>
+<div>
+<h3>Clarify the structure</h3>
+<p>Group related content and implement navigation that makes institutes, resources, publications, challenges, and events easier to reach.</p>
+</div></li>
+<li><span class="process-number">03</span>
+<div>
+<h3>Build and migrate</h3>
+<p>Rebuild pages with shared components, responsive interfaces, search, and support for dynamic content.</p>
+</div></li>
+<li><span class="process-number">04</span>
+<div>
+<h3>Review and release</h3>
+<p>Check content with stakeholders, retain important legacy paths, and publish reviewed updates in stages.</p>
+</div></li></ol>
+</section>
+<section id="tools">
+<p class="eyebrow">05 / TOOLS &amp; METHODS</p>
+<h2>The working toolkit.</h2>
+<ul class="tool-list">
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>GitHub</li>
+<li>Content migration</li>
+<li>Responsive design</li></ul>
+</section>
+<section id="impact">
+<p class="eyebrow">06 / RESULTS &amp; IMPACT</p>
+<h2>What the work contributed.</h2>
+<p>The rebuilt platform brought content for five institutes into one public reference point. Shared navigation and footer components made updates more consistent, while searchable content and preserved legacy links supported discovery and continuity. No measured usability improvement is claimed.</p>
+</section>
+<section id="reflection">
+<p class="eyebrow">07 / LESSONS LEARNED</p>
+<h2>What I’m taking forward.</h2>
+<p>A migration is as much a content and coordination problem as a coding problem. Clear structure, review steps, and reusable components make a platform easier for the next person to maintain.</p>
+</section>
+<section id="architecture">
+<p class="eyebrow">IMPLEMENTATION DETAIL</p>
+<h2>A structure built to be maintained.</h2>
+<div class="structure-comparison">
+<div>
+<h3>Legacy platform</h3>
+<p>Google Sites, content spread across sections, and navigation shaped by program history.</p>
+</div>
+<div>
+<h3>Rebuilt platform</h3>
+<p>GitHub-hosted HTML, CSS, and JavaScript; shared navigation and footer; searchable pages and clearer routes to resources.</p>
+</div>
+</div>
+<p>Implementation included client-side search indexing, event and news pagination, challenge status logic, and redirect pages for important legacy paths. The designer led UX direction; I focused on frontend implementation and content migration.</p>
+<details>
+<summary>Publishing and handoff</summary>
+<p>The designer shared the update, I implemented the frontend, and stakeholders reviewed content accuracy before publication. Future work on the NSF HDR platform centers on maintenance and content updates.</p></details>
+</section>
+</article>
+</div><a class="next-case" href="case-asphalt-qcqa.html"><span class="eyebrow">NEXT CASE STUDY</span>
+<h2>ODOT Operational Reporting Improvements <span aria-hidden="true">→</span></h2></a></main>
 <footer class="footer">
-  <p class="footer-note">Built slowly. Improved continuously.</p>
-  <p>
-    Reach me at
-    <a href="mailto:jasonam84@gmail.com">jasonam84@gmail.com</a>
-    ·
-    <a href="https://www.linkedin.com/in/jasonamomensah" target="_blank" rel="noopener">
-      LinkedIn
-    </a>
-  </p>
-  <p>© <span id="year"></span> Jason Amo-Mensah</p>
+<div class="wrap footer-inner"><a class="brand" href="index.html">Jason Amo-Mensah<span class="blue">.</span></a>
+<p>Thoughtful products. Clearer experiences.</p>
+<div><a href="mailto:jasonam84@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/jasonamomensah">LinkedIn ↗</a><a href="https://github.com/jasonam84">GitHub ↗</a>
+</div><small>© <span id="year">2026</span> Jason Amo-Mensah</small>
+</div>
 </footer>
-
-<script src="assets/js/main.js"></script>
 </body>
 </html>
