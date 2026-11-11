@@ -1,0 +1,240 @@
+[
+  {
+    "slug": "case-pnc.html",
+    "name": "PNC Digital Banking Experience Analysis",
+    "short": "Finding the friction in digital banking.",
+    "org": "PNC Financial Services",
+    "category": "Product analytics",
+    "date": "June – August 2026",
+    "role": "Digital Product Intern, Insights & Optimization",
+    "theme": "banking",
+    "desc": "Connecting session replays, funnel analysis, and customer feedback to practical product recommendations.",
+    "metrics": [
+      [
+        "400+",
+        "session replays analyzed"
+      ],
+      [
+        "40+",
+        "digital funnels evaluated"
+      ],
+      [
+        "3,000+",
+        "customer comments classified"
+      ]
+    ],
+    "problem": "Digital banking journeys can look straightforward in a flowchart while still creating friction for customers. The opportunity was to connect observable behavior with what customers said, so product teams could better understand where to focus.",
+    "responsibilities": [
+      "Analyzed more than 400 Glassbox session replays to identify friction in digital banking experiences.",
+      "Evaluated more than 40 digital customer funnels to understand abandonment and potential improvements.",
+      "Developed Qualtrics Text iQ topic structures and keyword strategies to classify more than 3,000 customer comments.",
+      "Translated customer behavior and Voice of Customer insights into recommendations for digital product teams."
+    ],
+    "steps": [
+      [
+        "Observe behavior",
+        "Review session replays and digital funnels to understand where customers encounter difficulty."
+      ],
+      [
+        "Organize feedback",
+        "Use topic structures and keyword strategies to make customer comments easier to analyze."
+      ],
+      [
+        "Connect the evidence",
+        "Bring behavioral observations and feedback themes together to frame improvement opportunities."
+      ],
+      [
+        "Support prioritization",
+        "Translate the findings into recommendations that product teams can consider alongside their priorities."
+      ]
+    ],
+    "tools": [
+      "Glassbox",
+      "Qualtrics Text iQ",
+      "Session replay analysis",
+      "Funnel analysis",
+      "Voice of Customer"
+    ],
+    "results": "The work gave digital product teams recommendations grounded in customer behavior and feedback. The figures above describe the scope of my analysis; they do not represent conversion gains or improvements after implementation.",
+    "lesson": "Behavioral data and customer feedback answer different questions. Looking at both helps me distinguish an observed obstacle from an assumption about why it happens.",
+    "note": "This case describes my methods and scope. Internal screens, customer records, specific banking journeys, and proprietary findings are omitted."
+  },
+  {
+    "slug": "case-imageomics.html",
+    "name": "NSF HDR Research Platform Redesign",
+    "short": "Making research easier to find.",
+    "org": "Ohio State · Imageomics Institute",
+    "category": "Platform development",
+    "date": "June 2025 – Present",
+    "role": "Website & Platform Development Intern",
+    "theme": "research",
+    "desc": "A Google Sites-to-GitHub migration and frontend rebuild for a public research community spanning five institutes.",
+    "metrics": [
+      [
+        "30+",
+        "pages rebuilt and migrated"
+      ],
+      [
+        "5",
+        "research institutes served"
+      ],
+      [
+        "Shared",
+        "frontend architecture"
+      ]
+    ],
+    "problem": "Researchers, faculty, staff, and public visitors needed to find resources across a growing platform. Content was spread across sections, navigation had become difficult to scan, and the migration had to preserve accuracy and important links.",
+    "responsibilities": [
+      "Implemented the frontend in HTML, CSS, and JavaScript, working from the designer’s UX direction.",
+      "Migrated and reviewed content across a 30+ page NSF HDR platform.",
+      "Built shared page structure, responsive navigation, and client-side search.",
+      "Collaborated with designers and research stakeholders on content accuracy and publishing reviews."
+    ],
+    "steps": [
+      [
+        "Map the content",
+        "Review legacy pages and identify the tasks of researchers, staff, and public visitors."
+      ],
+      [
+        "Clarify the structure",
+        "Group related content and implement navigation that makes institutes, resources, publications, challenges, and events easier to reach."
+      ],
+      [
+        "Build and migrate",
+        "Rebuild pages with shared components, responsive interfaces, search, and support for dynamic content."
+      ],
+      [
+        "Review and release",
+        "Check content with stakeholders, retain important legacy paths, and publish reviewed updates in stages."
+      ]
+    ],
+    "tools": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "GitHub",
+      "Content migration",
+      "Responsive design"
+    ],
+    "results": "The rebuilt platform brought content for five institutes into one public reference point. Shared navigation and footer components made updates more consistent, while searchable content and preserved legacy links supported discovery and continuity. No measured usability improvement is claimed.",
+    "lesson": "A migration is as much a content and coordination problem as a coding problem. Clear structure, review steps, and reusable components make a platform easier for the next person to maintain.",
+    "note": "The NSF HDR platform and the ongoing Imageomics Institute website redesign are separate efforts. This case focuses on the NSF HDR platform."
+  },
+  {
+    "slug": "case-asphalt-qcqa.html",
+    "name": "ODOT Operational Reporting Improvements",
+    "short": "Less reporting time. More clarity.",
+    "org": "Ohio Department of Transportation",
+    "category": "Process improvement",
+    "date": "May – October 2025",
+    "role": "Materials Testing & Data Analysis Intern",
+    "theme": "operations",
+    "desc": "Improving Excel reporting within materials testing, quality assurance, and compliance workflows.",
+    "metrics": [
+      [
+        "≈25%",
+        "less time spent reporting"
+      ],
+      [
+        "Excel",
+        "reporting workflows"
+      ],
+      [
+        "QC/QA",
+        "operational context"
+      ]
+    ],
+    "problem": "Materials testing and quality assurance depend on accurate documentation. Manual tracking across spreadsheets and technical records added work during a busy construction season. Reporting improvements needed to fit the existing quality and compliance process.",
+    "responsibilities": [
+      "Supported materials testing, quality assurance, and compliance processes.",
+      "Worked with technical documentation, quality standards, and operational data.",
+      "Improved Excel reporting workflows, reducing reporting time by approximately 25%.",
+      "Supported consistent documentation and checks within the materials review process."
+    ],
+    "steps": [
+      [
+        "Understand the workflow",
+        "Follow how test results, technical documents, and review notes move through existing reporting steps."
+      ],
+      [
+        "Identify repeated work",
+        "Look for manual reporting tasks that can be made more consistent within Excel."
+      ],
+      [
+        "Improve the reporting",
+        "Refine spreadsheet workflows while keeping the required documentation and quality standards in view."
+      ],
+      [
+        "Keep accuracy central",
+        "Support review-ready reporting and clear handoffs within the existing compliance process."
+      ]
+    ],
+    "tools": [
+      "Excel",
+      "Operational data analysis",
+      "Technical documentation",
+      "Quality assurance",
+      "Process improvement"
+    ],
+    "results": "The Excel reporting improvements reduced reporting time by approximately 25%. Materials testing and documentation work also supported the team’s ongoing quality assurance and compliance processes. No additional accuracy or approval-rate gains are claimed.",
+    "lesson": "A useful process improvement fits the people and constraints already in place. In a regulated setting, saving time only helps if the information remains accurate and easy to review."
+  },
+  {
+    "slug": "case-digital-strategy.html",
+    "name": "Ohio State Digital Strategy & Analytics",
+    "short": "Turning engagement data into next steps.",
+    "org": "Ohio State · Education and Human Ecology",
+    "category": "Digital strategy",
+    "date": "October 2024 – May 2025",
+    "role": "Digital Strategy & Analytics Intern",
+    "theme": "strategy",
+    "desc": "Making digital performance reporting understandable and useful for nontechnical stakeholders.",
+    "metrics": [
+      [
+        "Engagement",
+        "performance analysis"
+      ],
+      [
+        "Reporting",
+        "clear takeaways"
+      ],
+      [
+        "Strategy",
+        "practical recommendations"
+      ]
+    ],
+    "problem": "Digital engagement metrics can show what happened without making the next step clear. The opportunity was to connect website and content performance with practical decisions for teams with competing priorities.",
+    "responsibilities": [
+      "Analyzed digital engagement and website performance.",
+      "Supported analytics reporting and digital strategy recommendations.",
+      "Communicated findings to nontechnical stakeholders.",
+      "Helped connect performance patterns with content goals and team constraints."
+    ],
+    "steps": [
+      [
+        "Review performance",
+        "Examine website and digital engagement patterns in relation to content goals."
+      ],
+      [
+        "Interpret the patterns",
+        "Identify useful signals and put changes in context rather than treating every fluctuation as a trend."
+      ],
+      [
+        "Explain the findings",
+        "Translate analytics into plain-language takeaways that stakeholders can discuss."
+      ],
+      [
+        "Recommend next steps",
+        "Support practical recommendations that account for priorities, effort, and available time."
+      ]
+    ],
+    "tools": [
+      "Google Analytics",
+      "Digital engagement analysis",
+      "Analytics reporting",
+      "Stakeholder communication"
+    ],
+    "results": "The work supported clearer discussions about digital performance and practical recommendations for content and website strategy. This case focuses on analysis and communication; no numerical engagement or conversion increase is claimed.",
+    "lesson": "An analysis is most useful when the reader understands what it means for their next decision. I learned to connect the data to a clear question and explain the limitations alongside the takeaway."
+  }
+]
